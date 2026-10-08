@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg { fill: #0f172a; }
+      .box { fill: #1e293b; stroke: #334155; stroke-width: 2px; rx: 8px; }
+      .box-highlight { fill: #1e293b; stroke: #38bdf8; stroke-width: 2px; rx: 8px; }
+      .title { fill: #f8fafc; font-family: 'Segoe UI', sans-serif; font-size: 22px; font-weight: bold; text-anchor: middle; }
+      .subtitle { fill: #94a3b8; font-family: 'Segoe UI', sans-serif; font-size: 14px; text-anchor: middle; }
+      .label { fill: #e2e8f0; font-family: 'Segoe UI', sans-serif; font-size: 14px; font-weight: 600; text-anchor: middle; }
+      .sublabel { fill: #94a3b8; font-family: 'Segoe UI', sans-serif; font-size: 11px; text-anchor: middle; }
+      .arrow { stroke: #38bdf8; stroke-width: 2.5px; fill: none; marker-end: url(#head); }
+      .arrow-green { stroke: #22c55e; stroke-width: 2.5px; fill: none; marker-end: url(#head-green); }
+    </style>
+    <marker id="head" orient="auto" markerWidth="6" markerHeight="6" refX="5" refY="3">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#38bdf8"/>
+    </marker>
+    <marker id="head-green" orient="auto" markerWidth="6" markerHeight="6" refX="5" refY="3">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#22c55e"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="650" class="bg"/>
+
+  <!-- Title Banner -->
+  <text x="500" y="40" class="title">IMP-DevSecOps CI/CD Pipeline Flow</text>
+  <text x="500" y="65" class="subtitle">Secure Software Development Lifecycle (W5/P12) &amp; Automated VM Deployment</text>
+
+  <!-- Trigger -->
+  <rect x="50" y="100" width="160" height="70" class="box"/>
+  <text x="130" y="130" class="label">Trigger</text>
+  <text x="130" y="150" class="sublabel">Push / Pull Request</text>
+
+  <!-- Arrow to CI Jobs -->
+  <path d="M 210 135 L 260 135" class="arrow"/>
+
+  <!-- CI Jobs Container -->
+  <rect x="260" y="90" width="680" height="180" class="box" stroke-dasharray="5,5"/>
+  <text x="600" y="115" class="label" fill="#38bdf8">CI Stage (GitHub Actions - Ubuntu Latest)</text>
+
+  <!-- CI Job 1 -->
+  <rect x="280" y="135" width="180" height="110" class="box"/>
+  <text x="370" y="165" class="label">1. Semgrep SAST</text>
+  <text x="370" y="185" class="sublabel">Static Application</text>
+  <text x="370" y="200" class="sublabel">Security Testing</text>
+  <text x="370" y="220" fill="#22c55e" font-size="11px" text-anchor="middle">--exclude=.github</text>
+
+  <!-- CI Job 2 -->
+  <rect x="480" y="135" width="190" height="110" class="box"/>
+  <text x="575" y="165" class="label">2. Pylint Quality</text>
+  <text x="575" y="185" class="sublabel">Code Quality Gate</text>
+  <text x="575" y="200" class="sublabel">app.py</text>
+  <text x="575" y="220" fill="#22c55e" font-size="11px" text-anchor="middle">fail-under = 9.0</text>
+
+  <!-- CI Job 3 -->
+  <rect x="690" y="135" width="230" height="110" class="box"/>
+  <text x="805" y="165" class="label">3. Dependency Audit</text>
+  <text x="805" y="185" class="sublabel">SCA (pip-audit)</text>
+  <text x="805" y="200" class="sublabel">Vulnerability Scan</text>
+  <text x="805" y="220" fill="#22c55e" font-size="11px" text-anchor="middle">requirements.txt</text>
+
+  <!-- Arrow Down to CD Stage -->
+  <path d="M 600 270 L 600 310" class="arrow-green"/>
+
+  <!-- CD Stage Container -->
+  <rect x="50" y="310" width="900" height="300" class="box-highlight"/>
+  <text x="500" y="335" class="label" fill="#38bdf8">CD Stage: Build, Deploy &amp; Health Check on VM (Self-Hosted Runner)</text>
+  <text x="500" y="352" class="sublabel" fill="#94a3b8">Target: kenn@192.168.163.146</text>
+
+  <!-- CD Step 1: Build -->
+  <rect x="80" y="380" width="230" height="90" class="box"/>
+  <text x="195" y="410" class="label">1. Secure Build</text>
+  <text x="195" y="430" class="sublabel">docker build -t secure-flask-app</text>
+  <text x="195" y="445" class="sublabel">-f IMP-Dockerfile</text>
+
+  <path d="M 310 425 L 360 425" class="arrow"/>
+
+  <!-- CD Step 2: Deploy -->
+  <rect x="360" y="380" width="250" height="90" class="box"/>
+  <text x="485" y="410" class="label">2. Safe Deploy</text>
+  <text x="485" y="430" class="sublabel">docker rm -f web-flask</text>
+  <text x="485" y="445" class="sublabel">docker run -d -p 5000:5000</text>
+
+  <path d="M 610 425 L 660 425" class="arrow"/>
+
+  <!-- CD Step 3: Health & Optimization Check -->
+  <rect x="660" y="380" width="260" height="90" class="box"/>
+  <text x="790" y="410" class="label">3. Health &amp; Optimization</text>
+  <text x="790" y="430" class="sublabel">Container Running / Exit Code</text>
+  <text x="790" y="445" class="sublabel">HTTP Endpoint &amp; docker stats</text>
+
+  <!-- CD Step 4: Upgrade Check -->
+  <path d="M 790 470 L 790 510 L 500 510" class="arrow"/>
+  <rect x="280" y="495" width="440" height="85" class="box"/>
+  <text x="500" y="525" class="label">4. Container &amp; Package Upgrade Check</text>
+  <text x="500" y="545" class="sublabel">docker exec web-flask pip list --outdated</text>
+  <text x="500" y="562" class="sublabel">Ensures optimal performance and security patch readiness</text>
+
+</svg>
