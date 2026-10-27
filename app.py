@@ -45,7 +45,7 @@ def index():
             status_class = "danger"
 
     return render_template(
-        "index.html", message=message, status_class=status_class
+        "login_page.html", message=message, status_class=status_class
     )
 
 if __name__ == "__main__":
