@@ -1,0 +1,605 @@
+Pylint Code Quality Gate	UNKNOWN STEP	﻿2026-10-27T05:50:36.3929702Z Current runner version: '2.338.0'
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.3947087Z ##[group]Runner Image Provisioner
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.3947719Z Hosted Compute Agent
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.3948068Z Version: 20261021.618
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.3948465Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.3948933Z Build Date: 2026-10-21T00:45:21Z
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.3949343Z Worker ID: {a8bcad07-793d-47b2-b15f-e9cbc2705da7}
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.3949786Z Region: southcentralus
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.3950142Z Cloud: Azure
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.3950497Z ##[endgroup]
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.3951484Z ##[group]Operating System
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.3951849Z Ubuntu
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.3952227Z 24.04.5
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.3952579Z LTS
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.3952886Z ##[endgroup]
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.3953251Z ##[group]Runner Image
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.3953602Z Image: ubuntu-24.04
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.3954045Z Version: 20261012.334.1
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.3954876Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.3955767Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.3956318Z ##[endgroup]
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.3957065Z ##[group]GITHUB_TOKEN Permissions
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.3958244Z Contents: read
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.3958572Z Metadata: read
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.3958966Z Packages: read
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.3959297Z ##[endgroup]
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.3960645Z Secret source: Actions
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.3961233Z Cache mode: write
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.3961676Z Prepare workflow directory
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.4194885Z Prepare all required actions
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.4239293Z Getting action download info
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.6567018Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.7453851Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.8959585Z Complete job name: Pylint Code Quality Gate
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.9406599Z ##[group]Run actions/checkout@v4
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.9406999Z with:
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.9407271Z   repository: Kenn6-sIlennt/DevSecOps-pipeling
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.9409251Z   token: ***
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.9409486Z   ssh-strict: true
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.9409725Z   ssh-user: git
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.9409970Z   persist-credentials: true
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.9410236Z   clean: true
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.9410483Z   sparse-checkout-cone-mode: true
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.9410770Z   fetch-depth: 1
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.9411006Z   fetch-tags: false
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.9411250Z   show-progress: true
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.9411495Z   lfs: false
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.9411726Z   submodules: false
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.9411973Z   set-safe-directory: true
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.9412249Z   allow-unsafe-pr-checkout: false
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:36.9412597Z ##[endgroup]
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1261283Z Syncing repository: Kenn6-sIlennt/DevSecOps-pipeling
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1262771Z ##[group]Getting Git version info
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1263307Z Working directory is '/home/runner/work/DevSecOps-pipeling/DevSecOps-pipeling'
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1264108Z [command]/usr/bin/git version
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1321019Z git version 2.55.0
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1333421Z ##[endgroup]
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1343845Z Temporarily overriding HOME='/home/runner/work/_temp/092d11a1-3a39-4942-bcdf-d6eb95fe7e76' before making global git config changes
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1345356Z Adding repository directory to the temporary git global config as a safe directory
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1347293Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/DevSecOps-pipeling/DevSecOps-pipeling
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1392468Z Deleting the contents of '/home/runner/work/DevSecOps-pipeling/DevSecOps-pipeling'
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1395404Z ##[group]Initializing the repository
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1398190Z [command]/usr/bin/git init /home/runner/work/DevSecOps-pipeling/DevSecOps-pipeling
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1595141Z hint: Using 'master' as the name for the initial branch. This default branch name
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1596743Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1597719Z hint: to use in all of your new repositories, which will suppress this warning,
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1598465Z hint: call:
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1598923Z hint:
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1599238Z hint: 	git config --global init.defaultBranch <name>
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1599572Z hint:
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1599884Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1600379Z hint: 'development'. The just-created branch can be renamed via this command:
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1600774Z hint:
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1601028Z hint: 	git branch -m <name>
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1601282Z hint:
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1601617Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1602203Z Initialized empty Git repository in /home/runner/work/DevSecOps-pipeling/DevSecOps-pipeling/.git/
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1603339Z [command]/usr/bin/git remote add origin https://github.com/Kenn6-sIlennt/DevSecOps-pipeling
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1649153Z ##[endgroup]
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1649833Z ##[group]Disabling automatic garbage collection
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1650392Z [command]/usr/bin/git config --local gc.auto 0
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1675521Z ##[endgroup]
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1676178Z ##[group]Setting up auth
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1684462Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1716049Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.1979358Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.2007776Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.2176321Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.2204306Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.2375623Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.2408902Z ##[endgroup]
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.2409452Z ##[group]Fetching the repository
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.2416889Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +b191145c8e8171e03669bd707f0b4b6b34969d14:refs/remotes/pull/4/merge
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.5904452Z From https://github.com/Kenn6-sIlennt/DevSecOps-pipeling
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.5907002Z  * [new ref]         b191145c8e8171e03669bd707f0b4b6b34969d14 -> pull/4/merge
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.5918264Z ##[endgroup]
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.5919267Z ##[group]Determining the checkout info
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.5926065Z ##[endgroup]
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.5940455Z [command]/usr/bin/git sparse-checkout disable
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.6158417Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.6236983Z ##[group]Checking out the ref
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.6239056Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/4/merge
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.6324814Z Note: switching to 'refs/remotes/pull/4/merge'.
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.6325262Z 
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.6325632Z You are in 'detached HEAD' state. You can look around, make experimental
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.6326374Z changes and commit them, and you can discard any commits you make in this
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.6327241Z state without impacting any branches by switching back to a branch.
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.6327758Z 
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.6328111Z If you want to create a new branch to retain commits you create, you may
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.6329165Z do so (now or later) by using -c with the switch command. Example:
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.6329619Z 
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.6329822Z   git switch -c <new-branch-name>
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.6330146Z 
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.6330349Z Or undo this operation with:
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.6330644Z 
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.6330826Z   git switch -
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.6331108Z 
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.6331342Z Turn off this advice by setting config variable advice.detachedHead to false
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.6331667Z 
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.6332026Z HEAD is now at b191145 Merge 3b3ed20aecdc435892e6d0371b7f20d14d1e3c85 into 759147a091ef1e519328e99cc210131342e1e87c
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.6334242Z ##[endgroup]
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.6368093Z [command]/usr/bin/git log -1 --format=%H
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.6389369Z b191145c8e8171e03669bd707f0b4b6b34969d14
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.6600041Z ##[group]Run actions/setup-python@v5
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.6600404Z with:
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.6600662Z   python-version: 3.10
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.6600933Z   check-latest: false
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.6602994Z   token: ***
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.6603253Z   update-environment: true
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.6603548Z   allow-prereleases: false
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.6603845Z   freethreaded: false
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.6604305Z ##[endgroup]
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.7473782Z ##[group]Installed versions
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.7485238Z (node:2087) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.7486520Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.7487275Z Successfully set up CPython (3.10.22)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.7488089Z ##[endgroup]
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.7624737Z ##[group]Run python -m pip install --upgrade pip
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.7625477Z ^[[36;1mpython -m pip install --upgrade pip^[[0m
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.7626056Z ^[[36;1mpip install pylint^[[0m
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.7626553Z ^[[36;1mpip install -r requirements.txt^[[0m
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.7851880Z shell: /usr/bin/bash -e {0}
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.7852340Z env:
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.7852684Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.22/x64
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.7853178Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.22/x64/lib/pkgconfig
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.7853654Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.7854206Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.7854662Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.7855107Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.22/x64/lib
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:37.7855495Z ##[endgroup]
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:38.2674773Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages (26.2.1)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:38.3989027Z Collecting pip
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:38.4722503Z   Downloading pip-26.2.2-py3-none-any.whl.metadata (4.6 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:38.4883659Z Downloading pip-26.2.2-py3-none-any.whl (1.8 MB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:38.5938821Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 24.0 MB/s  0:00:00
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:38.6320040Z Installing collected packages: pip
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:38.6320919Z   Attempting uninstall: pip
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:38.6323672Z     Found existing installation: pip 26.2.1
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:38.6735617Z     Uninstalling pip-26.2.1:
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:38.6779050Z       Successfully uninstalled pip-26.2.1
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:39.2275031Z Successfully installed pip-26.2.2
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:39.6220357Z Collecting pylint
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:39.6786331Z   Downloading pylint-4.1.3-py3-none-any.whl.metadata (12 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:39.7139042Z Collecting astroid<=4.4,>=4.3.4 (from pylint)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:39.7246813Z   Downloading astroid-4.3.4-py3-none-any.whl.metadata (4.4 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:39.7446247Z Collecting dill>=0.2 (from pylint)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:39.7555279Z   Downloading dill-0.4.1-py3-none-any.whl.metadata (10 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:39.7945843Z Collecting isort!=5.13,<10,>=5 (from pylint)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:39.8061057Z   Downloading isort-9.0.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (11 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:39.8234106Z Collecting mccabe<0.8,>=0.6 (from pylint)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:39.8343205Z   Downloading mccabe-0.7.0-py2.py3-none-any.whl.metadata (5.0 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:39.8705508Z Collecting platformdirs>=2.2 (from pylint)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:39.8812825Z   Downloading platformdirs-4.12.4-py3-none-any.whl.metadata (5.5 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:39.9115727Z Collecting tomli>=1.1 (from pylint)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:39.9219370Z   Downloading tomli-2.5.0-py3-none-any.whl.metadata (10 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:39.9432394Z Collecting tomlkit>=0.10.1 (from pylint)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:39.9538079Z   Downloading tomlkit-0.15.2-py3-none-any.whl.metadata (3.4 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:39.9765393Z Collecting typing-extensions>=4 (from astroid<=4.4,>=4.3.4->pylint)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:39.9869062Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:40.0028896Z Collecting mypy-extensions>=1.1.0 (from isort!=5.13,<10,>=5->pylint)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:40.0133137Z   Downloading mypy_extensions-1.1.0-py3-none-any.whl.metadata (1.1 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:40.0265184Z Downloading pylint-4.1.3-py3-none-any.whl (588 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:40.0680196Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 589.0/589.0 kB 26.4 MB/s  0:00:00
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:40.0784583Z Downloading astroid-4.3.4-py3-none-any.whl (288 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:40.0965441Z Downloading isort-9.0.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.6 MB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:40.1198196Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 65.4 MB/s  0:00:00
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:40.1304841Z Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:40.1422408Z Downloading dill-0.4.1-py3-none-any.whl (120 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:40.1540451Z Downloading mypy_extensions-1.1.0-py3-none-any.whl (5.0 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:40.1658387Z Downloading platformdirs-4.12.4-py3-none-any.whl (32 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:40.1775895Z Downloading tomli-2.5.0-py3-none-any.whl (14 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:40.1894192Z Downloading tomlkit-0.15.2-py3-none-any.whl (52 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:40.2017212Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:40.2342276Z Installing collected packages: typing-extensions, tomlkit, tomli, platformdirs, mypy-extensions, mccabe, dill, isort, astroid, pylint
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:40.7096808Z 
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:40.7109321Z Successfully installed astroid-4.3.4 dill-0.4.1 isort-9.0.2 mccabe-0.7.0 mypy-extensions-1.1.0 platformdirs-4.12.4 pylint-4.1.3 tomli-2.5.0 tomlkit-0.15.2 typing-extensions-4.16.0
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.0123531Z Collecting flask (from -r requirements.txt (line 1))
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.0670782Z   Downloading flask-3.1.3-py3-none-any.whl.metadata (3.2 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.0853848Z Collecting blinker>=1.9.0 (from flask->-r requirements.txt (line 1))
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.0960530Z   Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.1195515Z Collecting click>=8.1.3 (from flask->-r requirements.txt (line 1))
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.1302923Z   Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.1461691Z Collecting itsdangerous>=2.2.0 (from flask->-r requirements.txt (line 1))
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.1568998Z   Downloading itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.1907179Z Collecting jinja2>=3.1.2 (from flask->-r requirements.txt (line 1))
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.2018487Z   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.2674732Z Collecting markupsafe>=2.1.1 (from flask->-r requirements.txt (line 1))
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.2783116Z   Downloading markupsafe-3.0.4-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.2989223Z Collecting werkzeug>=3.1.0 (from flask->-r requirements.txt (line 1))
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.3097855Z   Downloading werkzeug-3.1.9-py3-none-any.whl.metadata (4.1 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.3240982Z Downloading flask-3.1.3-py3-none-any.whl (103 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.3545992Z Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.3667204Z Downloading click-8.5.0-py3-none-any.whl (125 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.3889005Z Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.4010826Z Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.4151479Z Downloading markupsafe-3.0.4-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (20 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.4275442Z Downloading werkzeug-3.1.9-py3-none-any.whl (228 kB)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.4553616Z Installing collected packages: markupsafe, itsdangerous, click, blinker, werkzeug, jinja2, flask
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.6614170Z 
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.6629356Z Successfully installed blinker-1.9.0 click-8.5.0 flask-3.1.3 itsdangerous-2.2.0 jinja2-3.1.6 markupsafe-3.0.4 werkzeug-3.1.9
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.7035221Z ##[group]Run pylint --fail-under=9.0 app.py
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.7035443Z ^[[36;1mpylint --fail-under=9.0 app.py^[[0m
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.7090802Z shell: /usr/bin/bash -e {0}
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.7090942Z env:
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.7091092Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.22/x64
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.7091333Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.22/x64/lib/pkgconfig
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.7091568Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.7091780Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.7091986Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.7092197Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.22/x64/lib
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:41.7092377Z ##[endgroup]
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:43.7028053Z ************* Module app
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:43.7028341Z app.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:43.7028730Z app.py:6:0: C0116: Missing function or method docstring (missing-function-docstring)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:43.7029024Z app.py:15:0: C0116: Missing function or method docstring (missing-function-docstring)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:43.7029393Z app.py:2:0: C0411: standard import "sqlite3" should be placed before third party import "flask.Flask" (wrong-import-order)
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:43.7029632Z 
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:43.7029689Z -----------------------------------
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:43.7029882Z Your code has been rated at 8.67/10
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:43.7029978Z 
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:44.0326999Z ##[error]Process completed with exit code 16.
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:44.0420313Z Post job cleanup.
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:44.0953513Z [command]/usr/bin/git version
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:44.1014088Z git version 2.55.0
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:44.1037554Z Temporarily overriding HOME='/home/runner/work/_temp/bf77ba8b-72f0-48e4-a669-66846e3ed710' before making global git config changes
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:44.1038262Z Adding repository directory to the temporary git global config as a safe directory
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:44.1041389Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/DevSecOps-pipeling/DevSecOps-pipeling
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:44.1140730Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:44.1168836Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:44.1384981Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:44.1412994Z http.https://github.com/.extraheader
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:44.1422286Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:44.1454437Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:44.1632990Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:44.1660395Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:44.1944314Z Cleaning up orphan processes
+Pylint Code Quality Gate	UNKNOWN STEP	2026-10-27T05:50:44.2130842Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Semgrep SAST Scan	UNKNOWN STEP	﻿2026-10-27T05:50:37.0113320Z Current runner version: '2.338.0'
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.0136631Z ##[group]Runner Image Provisioner
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.0137550Z Hosted Compute Agent
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.0138138Z Version: 20261021.618
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.0139276Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.0140145Z Build Date: 2026-10-21T00:45:21Z
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.0140875Z Worker ID: {fef9fa62-a431-4240-be84-fe46ebb1663c}
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.0141686Z Region: westus2
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.0142232Z Cloud: Azure
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.0142771Z ##[endgroup]
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.0144654Z ##[group]Operating System
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.0145295Z Ubuntu
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.0145870Z 24.04.5
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.0146388Z LTS
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.0146921Z ##[endgroup]
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.0147516Z ##[group]Runner Image
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.0148152Z Image: ubuntu-24.04
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.0149261Z Version: 20261012.334.1
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.0150534Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.0152171Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.0153174Z ##[endgroup]
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.0154359Z ##[group]GITHUB_TOKEN Permissions
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.0156253Z Contents: read
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.0156912Z Metadata: read
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.0157489Z Packages: read
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.0158044Z ##[endgroup]
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.0160367Z Secret source: Actions
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.0161321Z Cache mode: write
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.0162079Z Prepare workflow directory
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.0580794Z Prepare all required actions
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.0627202Z Getting action download info
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.3982527Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.6099147Z Complete job name: Semgrep SAST Scan
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.6613116Z ##[group]Checking docker version
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.6626799Z ##[command]/usr/bin/docker version --format '{{.Server.APIVersion}}'
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.7672379Z '1.48'
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.7691515Z Docker daemon API version: '1.48'
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.7692281Z ##[command]/usr/bin/docker version --format '{{.Client.APIVersion}}'
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.7900455Z '1.48'
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.7913505Z Docker client API version: '1.48'
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.7919548Z ##[endgroup]
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.7922433Z ##[group]Clean up resources from previous jobs
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.7927720Z ##[command]/usr/bin/docker ps --all --quiet --no-trunc --filter "label=942e6a"
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.8070279Z ##[command]/usr/bin/docker network prune --force --filter "label=942e6a"
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.8195396Z ##[endgroup]
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.8195913Z ##[group]Create local container network
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.8205974Z ##[command]/usr/bin/docker network create --label 942e6a github_network_f18d5f63269b432d8aefab3fe2c021c5
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.8711058Z c7989a5774c037c520ca8f3ae64aa6a33a7bc4cedca9cb6a044b661e203352dd
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.8728936Z ##[endgroup]
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.8753074Z ##[group]Starting job container
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.8774377Z ##[command]/usr/bin/docker pull semgrep/semgrep
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:37.8879963Z Using default tag: latest
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:38.7739698Z latest: Pulling from semgrep/semgrep
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.1263674Z 5e9b4a97f639: Pulling fs layer
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.1264460Z e27848103812: Pulling fs layer
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.1265117Z f2fcae456309: Pulling fs layer
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.1265726Z 248709850098: Pulling fs layer
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.1266380Z bd9ddc54bea9: Pulling fs layer
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.1267037Z db43e654f745: Pulling fs layer
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.1267687Z e884d1f7bde9: Pulling fs layer
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.1268195Z d00fa809875c: Pulling fs layer
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.1269055Z c2bad043d386: Pulling fs layer
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.1269730Z 5e76960310b5: Pulling fs layer
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.1270431Z cd5d0e806f47: Pulling fs layer
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.1270844Z 850766837198: Pulling fs layer
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.1271375Z df7030e308c5: Pulling fs layer
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.1272516Z 608b4d261b6e: Pulling fs layer
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.1273067Z 5d35e74d7c68: Pulling fs layer
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.1273423Z e884d1f7bde9: Waiting
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.1273733Z d00fa809875c: Waiting
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.1274044Z c2bad043d386: Waiting
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.1274359Z 5e76960310b5: Waiting
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.1274667Z cd5d0e806f47: Waiting
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.1275221Z 850766837198: Waiting
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.1275788Z df7030e308c5: Waiting
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.1276234Z 248709850098: Waiting
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.1276574Z bd9ddc54bea9: Waiting
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.1276892Z db43e654f745: Waiting
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.1277335Z 5d35e74d7c68: Waiting
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.1277693Z 608b4d261b6e: Waiting
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.3872933Z e27848103812: Verifying Checksum
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.3873788Z e27848103812: Download complete
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.4720089Z 5e9b4a97f639: Verifying Checksum
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.4725367Z 5e9b4a97f639: Download complete
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.5900238Z f2fcae456309: Verifying Checksum
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.5900908Z f2fcae456309: Download complete
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.6116830Z 5e9b4a97f639: Pull complete
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.6182957Z 248709850098: Verifying Checksum
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.6183617Z 248709850098: Download complete
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.7070253Z bd9ddc54bea9: Verifying Checksum
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.7070700Z bd9ddc54bea9: Download complete
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.8962644Z db43e654f745: Verifying Checksum
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.8963787Z db43e654f745: Download complete
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:39.8977829Z e27848103812: Pull complete
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:40.2104048Z c2bad043d386: Download complete
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:40.4801249Z 5e76960310b5: Download complete
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:40.7072027Z cd5d0e806f47: Verifying Checksum
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:40.7073584Z cd5d0e806f47: Download complete
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:40.9487849Z 850766837198: Verifying Checksum
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:40.9489622Z 850766837198: Download complete
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:41.0228987Z d00fa809875c: Download complete
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:41.1216176Z e884d1f7bde9: Verifying Checksum
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:41.1216787Z e884d1f7bde9: Download complete
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:41.1817946Z df7030e308c5: Verifying Checksum
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:41.1818839Z df7030e308c5: Download complete
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:41.2538205Z 608b4d261b6e: Verifying Checksum
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:41.2538987Z 608b4d261b6e: Download complete
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:41.3538323Z 5d35e74d7c68: Verifying Checksum
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:41.3539167Z 5d35e74d7c68: Download complete
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:43.2985094Z f2fcae456309: Pull complete
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:43.3080066Z 248709850098: Pull complete
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:43.3178788Z bd9ddc54bea9: Pull complete
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:43.3449868Z db43e654f745: Pull complete
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:44.0865233Z e884d1f7bde9: Pull complete
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.0383718Z d00fa809875c: Pull complete
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.0983844Z c2bad043d386: Pull complete
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.1113209Z 5e76960310b5: Pull complete
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.1219477Z cd5d0e806f47: Pull complete
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.1315085Z 850766837198: Pull complete
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.1427470Z df7030e308c5: Pull complete
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.1513611Z 608b4d261b6e: Pull complete
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.1586545Z 5d35e74d7c68: Pull complete
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.1626127Z Digest: sha256:3db5c7af55eb1f512eac0abf0ab69a97b52c74b5e9a27314c221aee1a78d7ab2
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.1637009Z Status: Downloaded newer image for semgrep/semgrep:latest
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.1646598Z docker.io/semgrep/semgrep:latest
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.1726306Z ##[command]/usr/bin/docker create --name b9e6d45450484ff294b6dee038d987a3_semgrepsemgrep_94be3a --label 942e6a --workdir /__w/DevSecOps-pipeling/DevSecOps-pipeling --network github_network_f18d5f63269b432d8aefab3fe2c021c5  -e "HOME=/github/home" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work":"/__w" -v "/home/runner/actions-runner/cached/2.338.0/externals":"/__e":ro -v "/home/runner/work/_temp":"/__w/_temp" -v "/home/runner/work/_actions":"/__w/_actions" -v "/opt/hostedtoolcache":"/__t" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" --entrypoint "tail" semgrep/semgrep "-f" "/dev/null"
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.1977966Z 5548a2cd42fb79d94ffdf82dbf7672fcd30398299d85e1b49a3582beca5e079f
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.1999120Z ##[command]/usr/bin/docker start 5548a2cd42fb79d94ffdf82dbf7672fcd30398299d85e1b49a3582beca5e079f
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.3947856Z 5548a2cd42fb79d94ffdf82dbf7672fcd30398299d85e1b49a3582beca5e079f
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.3968244Z ##[command]/usr/bin/docker ps --all --filter id=5548a2cd42fb79d94ffdf82dbf7672fcd30398299d85e1b49a3582beca5e079f --filter status=running --no-trunc --format "{{.ID}} {{.Status}}"
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4095012Z 5548a2cd42fb79d94ffdf82dbf7672fcd30398299d85e1b49a3582beca5e079f Up Less than a second
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4115556Z ##[command]/usr/bin/docker inspect --format "{{range .Config.Env}}{{println .}}{{end}}" 5548a2cd42fb79d94ffdf82dbf7672fcd30398299d85e1b49a3582beca5e079f
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4243684Z HOME=/github/home
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4244190Z GITHUB_ACTIONS=true
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4244563Z CI=true
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4245079Z PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4245673Z SEMGREP_IN_DOCKER=1
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4245969Z SEMGREP_USER_AGENT_APPEND=Docker
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4246243Z PYTHONIOENCODING=utf8
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4246467Z PYTHONUNBUFFERED=1
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4247347Z DOCKER_OTEL_RESOURCE_ATTRIBUTES=vcs.ref.head.name=release-1.181.0,vcs.ref.head.revision=bb03d48e4c9d5d3b09e777ce1e048b7948dd09f5,vcs.repository.url.full=github.com/semgrep/semgrep-proprietary,docker.base_image=alpine:3.23
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4248257Z DD_SERVICE=semgrep-core
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4248778Z TSAN_OPTIONS=exitcode=0 report_signal_unsafe=0
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4266463Z ##[endgroup]
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4276259Z ##[group]Waiting for all services to be ready
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4277861Z ##[endgroup]
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4576588Z ##[group]Run actions/checkout@v4
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4577157Z with:
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4577408Z   repository: Kenn6-sIlennt/DevSecOps-pipeling
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4580229Z   token: ***
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4580438Z   ssh-strict: true
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4580640Z   ssh-user: git
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4580851Z   persist-credentials: true
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4581088Z   clean: true
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4581297Z   sparse-checkout-cone-mode: true
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4581548Z   fetch-depth: 1
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4581744Z   fetch-tags: false
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4581945Z   show-progress: true
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4582147Z   lfs: false
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4582331Z   submodules: false
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4582538Z   set-safe-directory: true
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4582849Z   allow-unsafe-pr-checkout: false
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4583379Z ##[endgroup]
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.4644868Z ##[command]/usr/bin/docker exec  5548a2cd42fb79d94ffdf82dbf7672fcd30398299d85e1b49a3582beca5e079f sh -c "cat /etc/*release | grep ^ID"
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.6874319Z Syncing repository: Kenn6-sIlennt/DevSecOps-pipeling
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.6876468Z ##[group]Getting Git version info
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.6877117Z Working directory is '/__w/DevSecOps-pipeling/DevSecOps-pipeling'
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.6878000Z [command]/usr/bin/git version
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.6914855Z git version 2.52.0
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.6966109Z ##[endgroup]
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.6976068Z Temporarily overriding HOME='/__w/_temp/32746f2a-3391-4638-bffe-5e60d54470dd' before making global git config changes
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.6976904Z Adding repository directory to the temporary git global config as a safe directory
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.6984074Z [command]/usr/bin/git config --global --add safe.directory /__w/DevSecOps-pipeling/DevSecOps-pipeling
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.7023737Z Deleting the contents of '/__w/DevSecOps-pipeling/DevSecOps-pipeling'
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.7027706Z ##[group]Initializing the repository
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.7034118Z [command]/usr/bin/git init /__w/DevSecOps-pipeling/DevSecOps-pipeling
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.7098066Z hint: Using 'master' as the name for the initial branch. This default branch name
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.7101520Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.7105568Z hint: to use in all of your new repositories, which will suppress this warning,
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.7106850Z hint: call:
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.7107472Z hint:
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.7108281Z hint: 	git config --global init.defaultBranch <name>
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.7109190Z hint:
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.7109756Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.7110740Z hint: 'development'. The just-created branch can be renamed via this command:
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.7111465Z hint:
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.7111906Z hint: 	git branch -m <name>
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.7112372Z hint:
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.7113040Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.7114241Z Initialized empty Git repository in /__w/DevSecOps-pipeling/DevSecOps-pipeling/.git/
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.7119290Z [command]/usr/bin/git remote add origin https://github.com/Kenn6-sIlennt/DevSecOps-pipeling
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.7156794Z ##[endgroup]
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.7157461Z ##[group]Disabling automatic garbage collection
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.7163416Z [command]/usr/bin/git config --local gc.auto 0
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.7193606Z ##[endgroup]
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.7194626Z ##[group]Setting up auth
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.7202262Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.7233309Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.7467938Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.7501995Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.7728988Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.7761358Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.7958864Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.7993902Z ##[endgroup]
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.7994397Z ##[group]Fetching the repository
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:50.8005886Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +b191145c8e8171e03669bd707f0b4b6b34969d14:refs/remotes/pull/4/merge
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.1696869Z From https://github.com/Kenn6-sIlennt/DevSecOps-pipeling
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.1697960Z  * [new ref]         b191145c8e8171e03669bd707f0b4b6b34969d14 -> pull/4/merge
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.1726069Z ##[endgroup]
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.1726784Z ##[group]Determining the checkout info
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.1730795Z ##[endgroup]
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.1739298Z [command]/usr/bin/git sparse-checkout disable
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.1786772Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.1815448Z ##[group]Checking out the ref
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.1821787Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/4/merge
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.1900464Z Note: switching to 'refs/remotes/pull/4/merge'.
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.1901810Z 
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.1902541Z You are in 'detached HEAD' state. You can look around, make experimental
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.1903801Z changes and commit them, and you can discard any commits you make in this
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.1905089Z state without impacting any branches by switching back to a branch.
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.1905888Z 
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.1906539Z If you want to create a new branch to retain commits you create, you may
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.1910099Z do so (now or later) by using -c with the switch command. Example:
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.1910860Z 
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.1911009Z   git switch -c <new-branch-name>
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.1911199Z 
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.1911309Z Or undo this operation with:
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.1911473Z 
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.1911570Z   git switch -
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.1911706Z 
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.1911928Z Turn off this advice by setting config variable advice.detachedHead to false
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.1912238Z 
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.1912590Z HEAD is now at b191145 Merge 3b3ed20aecdc435892e6d0371b7f20d14d1e3c85 into 759147a091ef1e519328e99cc210131342e1e87c
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.1913666Z ##[endgroup]
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.1959378Z [command]/usr/bin/git log -1 --format=%H
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.1985674Z b191145c8e8171e03669bd707f0b4b6b34969d14
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.2252712Z ##[group]Run semgrep scan --config auto --error --verbose --exclude=".github"
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.2253312Z ^[[36;1msemgrep scan --config auto --error --verbose --exclude=".github"^[[0m
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.2257327Z shell: sh -e {0}
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:51.2257556Z ##[endgroup]
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:54.0628420Z running 1074 rules from 1 config remote-registry_0
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:54.0653865Z Rules:
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:54.0654899Z <SKIPPED DATA (too many entries; use --max-log-list-entries)>
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:54.2821105Z                
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:54.2821703Z                
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:54.2822366Z ┌─────────────┐
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:54.2822817Z │ Scan Status │
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:54.2823234Z └─────────────┘
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:54.2827859Z   Scanning 19 files tracked by git with 1074 Code rules:
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:54.2937261Z                                                                                                                         
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:54.2938736Z   Language      Rules   Files          Origin      Rules                                                                
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:54.2940146Z  ─────────────────────────────        ───────────────────                                                               
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:54.2941474Z   <multilang>      60      19          Community    1074                                                                
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:54.2942679Z   bash              4       3                                                                                           
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:54.2943761Z   python          243       1                                                                                           
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:54.2944836Z   yaml             35       1                                                                                           
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:54.2945936Z   dockerfile        6       1                                                                                           
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:54.2947043Z   html              1       1                                                                                           
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:54.2947593Z                                                                                                                         
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:54.9906831Z SCA findings adjustment: No SCA rules to adjust
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:54.9909023Z [WARN] Other syntax error at line Dockerfile.yaml:6:
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:54.9910504Z  (approximate error location; error nearby after) error calling parser: did not find expected <document start> character 0 position 0 returned: 0
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0623478Z 
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0623903Z ========================================
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0624484Z Files skipped:
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0624838Z ========================================
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0625143Z 
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0625306Z   Always skipped by Semgrep:
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0625583Z 
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0625968Z    • <none>
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0626152Z 
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0626340Z   Skipped by .gitignore:
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0626772Z   (Disable by passing --no-git-ignore)
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0627099Z 
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0627469Z    • <all files not listed by `git ls-files` were skipped>
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0628174Z 
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0628283Z   Skipped by .semgrepignore:
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0629109Z   - https://semgrep.dev/docs/ignoring-files-folders-code/#understand-semgrep-defaults
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0629732Z 
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0629935Z    • <none>
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0630122Z 
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0630295Z   Skipped by --include patterns:
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0630584Z 
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0630997Z    • <none>
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0631197Z 
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0631362Z   Skipped by --exclude patterns:
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0631624Z 
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0631872Z    • .github/workflows/IMP-devsecops.yml
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0632437Z    • .github/workflows/devsecops.yml
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0632769Z 
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0632929Z   Files that couldn't be accessed:
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0633612Z 
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0633867Z    • <none>
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0634107Z 
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0634381Z   Skipped by limiting to files smaller than 1000000 bytes:
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0635022Z   (Adjust with the --max-target-bytes flag)
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0635412Z 
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0635648Z    • <none>
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0635839Z 
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0636145Z   Partially analyzed due to parsing or internal Semgrep errors
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0636620Z 
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0636839Z    • Dockerfile.yaml
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0637107Z 
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0637264Z                 
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0637603Z                 
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0638027Z ┌──────────────┐
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0638702Z │ Scan Summary │
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0639165Z └──────────────┘
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0639625Z ✅ Scan completed successfully.
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0640153Z  • Findings: 0 (0 blocking)
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0640604Z  • Rules run: 346
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0641008Z  • Targets scanned: 19
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0641519Z  • Parsed lines: ~100.0%
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0641955Z  • Scan skipped: 
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0642397Z    ◦ Matching --exclude patterns: 2
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0642970Z  • Scan was limited to files tracked by git
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0643501Z Ran 346 rules on 19 files: 0 findings.
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0644189Z (need more rules? `semgrep login` for additional free Semgrep Registry rules)
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0644738Z 
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0757818Z 
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0758386Z A new version of Semgrep is available. See https://semgrep.dev/docs/upgrading
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0764659Z If Semgrep missed a finding, please send us feedback to let us know!
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0765490Z See https://semgrep.dev/docs/reporting-false-negatives/
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.0821174Z Sending pseudonymous metrics since metrics are configured to AUTO, registry usage is True, and login status is False
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.5754048Z Post job cleanup.
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.5762166Z ##[command]/usr/bin/docker exec  5548a2cd42fb79d94ffdf82dbf7672fcd30398299d85e1b49a3582beca5e079f sh -c "cat /etc/*release | grep ^ID"
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.7741984Z [command]/usr/bin/git version
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.7802259Z git version 2.52.0
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.7860624Z Copying '/github/home/.gitconfig' to '/__w/_temp/aa6e45e9-eaa4-45d0-a52a-766897ffdd30/.gitconfig'
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.7880456Z Temporarily overriding HOME='/__w/_temp/aa6e45e9-eaa4-45d0-a52a-766897ffdd30' before making global git config changes
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.7883980Z Adding repository directory to the temporary git global config as a safe directory
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.7892280Z [command]/usr/bin/git config --global --add safe.directory /__w/DevSecOps-pipeling/DevSecOps-pipeling
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.7938777Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.7986119Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.8210894Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.8252470Z http.https://github.com/.extraheader
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.8268619Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.8313145Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.8537048Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.8574262Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.9005043Z Stop and remove container: b9e6d45450484ff294b6dee038d987a3_semgrepsemgrep_94be3a
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:55.9012166Z ##[command]/usr/bin/docker rm --force 5548a2cd42fb79d94ffdf82dbf7672fcd30398299d85e1b49a3582beca5e079f
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:56.0058672Z 5548a2cd42fb79d94ffdf82dbf7672fcd30398299d85e1b49a3582beca5e079f
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:56.0087061Z Remove container network: github_network_f18d5f63269b432d8aefab3fe2c021c5
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:56.0091850Z ##[command]/usr/bin/docker network rm github_network_f18d5f63269b432d8aefab3fe2c021c5
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:56.1003039Z github_network_f18d5f63269b432d8aefab3fe2c021c5
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:56.1075774Z Cleaning up orphan processes
+Semgrep SAST Scan	UNKNOWN STEP	2026-10-27T05:50:56.3111212Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
