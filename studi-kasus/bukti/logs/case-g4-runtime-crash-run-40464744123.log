@@ -1,0 +1,1123 @@
+Semgrep SAST Scan	Set up job	﻿2026-10-27T07:02:57.8290463Z Current runner version: '2.338.0'
+Semgrep SAST Scan	Set up job	2026-10-27T07:02:57.8311741Z ##[group]Runner Image Provisioner
+Semgrep SAST Scan	Set up job	2026-10-27T07:02:57.8312645Z Hosted Compute Agent
+Semgrep SAST Scan	Set up job	2026-10-27T07:02:57.8313125Z Version: 20261021.618
+Semgrep SAST Scan	Set up job	2026-10-27T07:02:57.8313750Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+Semgrep SAST Scan	Set up job	2026-10-27T07:02:57.8314340Z Build Date: 2026-10-21T00:45:21Z
+Semgrep SAST Scan	Set up job	2026-10-27T07:02:57.8314957Z Worker ID: {8531af3e-56f7-455c-9e89-a89754cbcc9f}
+Semgrep SAST Scan	Set up job	2026-10-27T07:02:57.8315530Z Region: westus3
+Semgrep SAST Scan	Set up job	2026-10-27T07:02:57.8315965Z Cloud: Azure
+Semgrep SAST Scan	Set up job	2026-10-27T07:02:57.8316459Z ##[endgroup]
+Semgrep SAST Scan	Set up job	2026-10-27T07:02:57.8317823Z ##[group]Operating System
+Semgrep SAST Scan	Set up job	2026-10-27T07:02:57.8318420Z Ubuntu
+Semgrep SAST Scan	Set up job	2026-10-27T07:02:57.8318866Z 24.04.5
+Semgrep SAST Scan	Set up job	2026-10-27T07:02:57.8319284Z LTS
+Semgrep SAST Scan	Set up job	2026-10-27T07:02:57.8319781Z ##[endgroup]
+Semgrep SAST Scan	Set up job	2026-10-27T07:02:57.8320235Z ##[group]Runner Image
+Semgrep SAST Scan	Set up job	2026-10-27T07:02:57.8320772Z Image: ubuntu-24.04
+Semgrep SAST Scan	Set up job	2026-10-27T07:02:57.8321252Z Version: 20261012.334.1
+Semgrep SAST Scan	Set up job	2026-10-27T07:02:57.8322108Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+Semgrep SAST Scan	Set up job	2026-10-27T07:02:57.8323727Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+Semgrep SAST Scan	Set up job	2026-10-27T07:02:57.8324575Z ##[endgroup]
+Semgrep SAST Scan	Set up job	2026-10-27T07:02:57.8325526Z ##[group]GITHUB_TOKEN Permissions
+Semgrep SAST Scan	Set up job	2026-10-27T07:02:57.8327123Z Contents: read
+Semgrep SAST Scan	Set up job	2026-10-27T07:02:57.8327629Z Metadata: read
+Semgrep SAST Scan	Set up job	2026-10-27T07:02:57.8328124Z Packages: read
+Semgrep SAST Scan	Set up job	2026-10-27T07:02:57.8328648Z ##[endgroup]
+Semgrep SAST Scan	Set up job	2026-10-27T07:02:57.8330251Z Secret source: Actions
+Semgrep SAST Scan	Set up job	2026-10-27T07:02:57.8331090Z Cache mode: write
+Semgrep SAST Scan	Set up job	2026-10-27T07:02:57.8331651Z Prepare workflow directory
+Semgrep SAST Scan	Set up job	2026-10-27T07:02:57.8691288Z Prepare all required actions
+Semgrep SAST Scan	Set up job	2026-10-27T07:02:57.8729303Z Getting action download info
+Semgrep SAST Scan	Set up job	2026-10-27T07:02:58.1745639Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+Semgrep SAST Scan	Set up job	2026-10-27T07:02:58.3615827Z Complete job name: Semgrep SAST Scan
+Semgrep SAST Scan	Initialize containers	﻿2026-10-27T07:02:58.4004492Z ##[group]Checking docker version
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:58.4014904Z ##[command]/usr/bin/docker version --format '{{.Server.APIVersion}}'
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:58.4599769Z '1.48'
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:58.4608932Z Docker daemon API version: '1.48'
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:58.4609566Z ##[command]/usr/bin/docker version --format '{{.Client.APIVersion}}'
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:58.4736562Z '1.48'
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:58.4745156Z Docker client API version: '1.48'
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:58.4749385Z ##[endgroup]
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:58.4751251Z ##[group]Clean up resources from previous jobs
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:58.4755606Z ##[command]/usr/bin/docker ps --all --quiet --no-trunc --filter "label=dd8b32"
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:58.4867660Z ##[command]/usr/bin/docker network prune --force --filter "label=dd8b32"
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:58.4971621Z ##[endgroup]
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:58.4972065Z ##[group]Create local container network
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:58.4980188Z ##[command]/usr/bin/docker network create --label dd8b32 github_network_13f5ca5283004f6396b8f5b19a84a206
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:58.5425504Z 73447c73df9505b75b9c25be6c2310b39e7a5dd5f42235c798ebd602e2fea4fd
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:58.5441000Z ##[endgroup]
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:58.5460364Z ##[group]Starting job container
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:58.5477917Z ##[command]/usr/bin/docker pull semgrep/semgrep
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:58.5567983Z Using default tag: latest
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.3430608Z latest: Pulling from semgrep/semgrep
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.5728628Z 5e9b4a97f639: Pulling fs layer
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.5731578Z e27848103812: Pulling fs layer
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.5733025Z f2fcae456309: Pulling fs layer
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.5734383Z 248709850098: Pulling fs layer
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.5735286Z bd9ddc54bea9: Pulling fs layer
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.5736200Z db43e654f745: Pulling fs layer
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.5737050Z e884d1f7bde9: Pulling fs layer
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.5738326Z d00fa809875c: Pulling fs layer
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.5739153Z c2bad043d386: Pulling fs layer
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.5739917Z 5e76960310b5: Pulling fs layer
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.5740670Z cd5d0e806f47: Pulling fs layer
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.5741429Z 248709850098: Waiting
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.5742197Z bd9ddc54bea9: Waiting
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.5743492Z db43e654f745: Waiting
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.5744315Z e884d1f7bde9: Waiting
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.5745065Z d00fa809875c: Waiting
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.5745779Z c2bad043d386: Waiting
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.5746503Z 850766837198: Pulling fs layer
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.5747305Z df7030e308c5: Pulling fs layer
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.5748139Z 608b4d261b6e: Pulling fs layer
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.5748996Z 5d35e74d7c68: Pulling fs layer
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.5750021Z 5e76960310b5: Waiting
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.5751013Z cd5d0e806f47: Waiting
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.5752000Z 850766837198: Waiting
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.5753378Z df7030e308c5: Waiting
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.5754490Z 5d35e74d7c68: Waiting
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.8021021Z e27848103812: Download complete
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.8163218Z 5e9b4a97f639: Verifying Checksum
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.8163663Z 5e9b4a97f639: Download complete
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.9150844Z 5e9b4a97f639: Pull complete
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.9341227Z f2fcae456309: Verifying Checksum
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.9341851Z f2fcae456309: Download complete
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.9683858Z 248709850098: Verifying Checksum
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.9684374Z 248709850098: Download complete
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.9937332Z bd9ddc54bea9: Verifying Checksum
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:02:59.9937966Z bd9ddc54bea9: Download complete
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:00.1387911Z db43e654f745: Verifying Checksum
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:00.1388510Z db43e654f745: Download complete
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:00.2118817Z e27848103812: Pull complete
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:00.3371982Z c2bad043d386: Download complete
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:00.5212926Z 5e76960310b5: Download complete
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:00.6920027Z cd5d0e806f47: Verifying Checksum
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:00.6925088Z cd5d0e806f47: Download complete
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:00.7414385Z e884d1f7bde9: Download complete
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:00.7875618Z d00fa809875c: Verifying Checksum
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:00.7876209Z d00fa809875c: Download complete
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:00.8637355Z 850766837198: Verifying Checksum
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:00.8637842Z 850766837198: Download complete
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:00.9236180Z df7030e308c5: Verifying Checksum
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:00.9236687Z df7030e308c5: Download complete
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:00.9644279Z 608b4d261b6e: Verifying Checksum
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:00.9645076Z 608b4d261b6e: Download complete
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:01.0453238Z 5d35e74d7c68: Verifying Checksum
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:01.0453859Z 5d35e74d7c68: Download complete
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:04.1527647Z f2fcae456309: Pull complete
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:04.1600014Z 248709850098: Pull complete
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:04.1695609Z bd9ddc54bea9: Pull complete
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:04.2046881Z db43e654f745: Pull complete
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:05.5190786Z e884d1f7bde9: Pull complete
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:12.9439415Z d00fa809875c: Pull complete
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:13.0444649Z c2bad043d386: Pull complete
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:13.0557565Z 5e76960310b5: Pull complete
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:13.0709044Z cd5d0e806f47: Pull complete
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:13.1280114Z 850766837198: Pull complete
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:13.1362603Z df7030e308c5: Pull complete
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:13.1440442Z 608b4d261b6e: Pull complete
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:13.1510549Z 5d35e74d7c68: Pull complete
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:13.1539200Z Digest: sha256:3db5c7af55eb1f512eac0abf0ab69a97b52c74b5e9a27314c221aee1a78d7ab2
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:13.1549026Z Status: Downloaded newer image for semgrep/semgrep:latest
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:13.1555729Z docker.io/semgrep/semgrep:latest
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:13.1621836Z ##[command]/usr/bin/docker create --name 2f505cb2ffe942168e687a29592e6aaf_semgrepsemgrep_ecc341 --label dd8b32 --workdir /__w/DevSecOps-pipeling/DevSecOps-pipeling --network github_network_13f5ca5283004f6396b8f5b19a84a206  -e "HOME=/github/home" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work":"/__w" -v "/home/runner/actions-runner/cached/2.338.0/externals":"/__e":ro -v "/home/runner/work/_temp":"/__w/_temp" -v "/home/runner/work/_actions":"/__w/_actions" -v "/opt/hostedtoolcache":"/__t" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" --entrypoint "tail" semgrep/semgrep "-f" "/dev/null"
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:13.1834601Z 4f46bd4c954f1b532959e065333534693886bc7513c5c8050cce81e179c08aff
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:13.1854381Z ##[command]/usr/bin/docker start 4f46bd4c954f1b532959e065333534693886bc7513c5c8050cce81e179c08aff
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:13.4390641Z 4f46bd4c954f1b532959e065333534693886bc7513c5c8050cce81e179c08aff
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:13.4407393Z ##[command]/usr/bin/docker ps --all --filter id=4f46bd4c954f1b532959e065333534693886bc7513c5c8050cce81e179c08aff --filter status=running --no-trunc --format "{{.ID}} {{.Status}}"
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:13.4504669Z 4f46bd4c954f1b532959e065333534693886bc7513c5c8050cce81e179c08aff Up Less than a second
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:13.4519587Z ##[command]/usr/bin/docker inspect --format "{{range .Config.Env}}{{println .}}{{end}}" 4f46bd4c954f1b532959e065333534693886bc7513c5c8050cce81e179c08aff
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:13.4619239Z HOME=/github/home
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:13.4619550Z GITHUB_ACTIONS=true
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:13.4623044Z CI=true
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:13.4623441Z PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:13.4623862Z SEMGREP_IN_DOCKER=1
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:13.4624148Z SEMGREP_USER_AGENT_APPEND=Docker
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:13.4624447Z PYTHONIOENCODING=utf8
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:13.4624708Z PYTHONUNBUFFERED=1
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:13.4625800Z DOCKER_OTEL_RESOURCE_ATTRIBUTES=vcs.ref.head.name=release-1.181.0,vcs.ref.head.revision=bb03d48e4c9d5d3b09e777ce1e048b7948dd09f5,vcs.repository.url.full=github.com/semgrep/semgrep-proprietary,docker.base_image=alpine:3.23
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:13.4626646Z DD_SERVICE=semgrep-core
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:13.4626854Z TSAN_OPTIONS=exitcode=0 report_signal_unsafe=0
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:13.4635781Z ##[endgroup]
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:13.4643436Z ##[group]Waiting for all services to be ready
+Semgrep SAST Scan	Initialize containers	2026-10-27T07:03:13.4644836Z ##[endgroup]
+Semgrep SAST Scan	Checkout Source Code	﻿2026-10-27T07:03:13.4873427Z ##[group]Run actions/checkout@v4
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:13.4873831Z with:
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:13.4874035Z   repository: Kenn6-sIlennt/DevSecOps-pipeling
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:13.4876177Z   token: ***
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:13.4876347Z   ssh-strict: true
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:13.4876514Z   ssh-user: git
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:13.4876687Z   persist-credentials: true
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:13.4876874Z   clean: true
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:13.4877040Z   sparse-checkout-cone-mode: true
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:13.4877241Z   fetch-depth: 1
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:13.4877402Z   fetch-tags: false
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:13.4877569Z   show-progress: true
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:13.4877747Z   lfs: false
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:13.4877897Z   submodules: false
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:13.4878062Z   set-safe-directory: true
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:13.4878320Z   allow-unsafe-pr-checkout: false
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:13.4878660Z ##[endgroup]
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:13.4927372Z ##[command]/usr/bin/docker exec  4f46bd4c954f1b532959e065333534693886bc7513c5c8050cce81e179c08aff sh -c "cat /etc/*release | grep ^ID"
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8120382Z Syncing repository: Kenn6-sIlennt/DevSecOps-pipeling
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8121796Z ##[group]Getting Git version info
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8122337Z Working directory is '/__w/DevSecOps-pipeling/DevSecOps-pipeling'
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8123214Z [command]/usr/bin/git version
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8183587Z git version 2.52.0
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8212276Z ##[endgroup]
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8227682Z Temporarily overriding HOME='/__w/_temp/ce6d3b93-e48d-4a28-bb62-61365df2615d' before making global git config changes
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8228605Z Adding repository directory to the temporary git global config as a safe directory
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8233614Z [command]/usr/bin/git config --global --add safe.directory /__w/DevSecOps-pipeling/DevSecOps-pipeling
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8261678Z Deleting the contents of '/__w/DevSecOps-pipeling/DevSecOps-pipeling'
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8267087Z ##[group]Initializing the repository
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8271641Z [command]/usr/bin/git init /__w/DevSecOps-pipeling/DevSecOps-pipeling
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8441819Z Initialized empty Git repository in /__w/DevSecOps-pipeling/DevSecOps-pipeling/.git/
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8456882Z hint: Using 'master' as the name for the initial branch. This default branch name
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8457843Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8458629Z hint: to use in all of your new repositories, which will suppress this warning,
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8459124Z hint: call:
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8459363Z hint:
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8459739Z hint: 	git config --global init.defaultBranch <name>
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8460119Z hint:
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8460496Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8461106Z hint: 'development'. The just-created branch can be renamed via this command:
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8461591Z hint:
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8461841Z hint: 	git branch -m <name>
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8462116Z hint:
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8462660Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8465844Z [command]/usr/bin/git remote add origin https://github.com/Kenn6-sIlennt/DevSecOps-pipeling
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8566299Z ##[endgroup]
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8566657Z ##[group]Disabling automatic garbage collection
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8656611Z [command]/usr/bin/git config --local gc.auto 0
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8674215Z ##[endgroup]
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8674699Z ##[group]Setting up auth
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8680921Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8708583Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8883698Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.8909859Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.9095375Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.9124013Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.9287795Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.9318711Z ##[endgroup]
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.9319076Z ##[group]Fetching the repository
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:17.9330433Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +90f3eed4cb5e7e4bb4871cc25242484fb314af2f:refs/remotes/pull/7/merge
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:18.3001072Z From https://github.com/Kenn6-sIlennt/DevSecOps-pipeling
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:18.3001758Z  * [new ref]         90f3eed4cb5e7e4bb4871cc25242484fb314af2f -> pull/7/merge
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:18.3054988Z ##[endgroup]
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:18.3055511Z ##[group]Determining the checkout info
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:18.3056368Z ##[endgroup]
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:18.3062278Z [command]/usr/bin/git sparse-checkout disable
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:18.3098874Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:18.3121731Z ##[group]Checking out the ref
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:18.3126540Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/7/merge
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:18.3186773Z Note: switching to 'refs/remotes/pull/7/merge'.
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:18.3187199Z 
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:18.3187467Z You are in 'detached HEAD' state. You can look around, make experimental
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:18.3188044Z changes and commit them, and you can discard any commits you make in this
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:18.3188806Z state without impacting any branches by switching back to a branch.
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:18.3189083Z 
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:18.3189395Z If you want to create a new branch to retain commits you create, you may
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:18.3189888Z do so (now or later) by using -c with the switch command. Example:
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:18.3190422Z 
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:18.3190576Z   git switch -c <new-branch-name>
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:18.3190760Z 
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:18.3190891Z Or undo this operation with:
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:18.3191070Z 
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:18.3191167Z   git switch -
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:18.3191308Z 
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:18.3191533Z Turn off this advice by setting config variable advice.detachedHead to false
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:18.3191926Z 
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:18.3192300Z HEAD is now at 90f3eed Merge b03056598aa923dab0a5fb2eecabaa32db077d6a into 89cf68c342d2c70f127450dd02109b5e2b024cf2
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:18.3193546Z ##[endgroup]
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:18.3222665Z [command]/usr/bin/git log -1 --format=%H
+Semgrep SAST Scan	Checkout Source Code	2026-10-27T07:03:18.3242688Z 90f3eed4cb5e7e4bb4871cc25242484fb314af2f
+Semgrep SAST Scan	Run Semgrep SAST	﻿2026-10-27T07:03:18.3541022Z ##[group]Run semgrep scan --config auto --error --verbose --exclude=".github"
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:18.3541485Z ^[[36;1msemgrep scan --config auto --error --verbose --exclude=".github"^[[0m
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:18.3544246Z shell: sh -e {0}
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:18.3544435Z ##[endgroup]
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:20.5707983Z running 1074 rules from 1 config remote-registry_0
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:20.5726477Z Rules:
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:20.5734368Z <SKIPPED DATA (too many entries; use --max-log-list-entries)>
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:20.7427378Z                
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:20.7427750Z                
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:20.7428217Z ┌─────────────┐
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:20.7428434Z │ Scan Status │
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:20.7428613Z └─────────────┘
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:20.7433210Z   Scanning 18 files tracked by git with 1074 Code rules:
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:20.7507790Z                                                                                                                         
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:20.7508434Z   Language      Rules   Files          Origin      Rules                                                                
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:20.7509343Z  ─────────────────────────────        ───────────────────                                                               
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:20.7510070Z   <multilang>      60      18          Community    1074                                                                
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:20.7510728Z   bash              4       3                                                                                           
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:20.7511291Z   python          243       1                                                                                           
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:20.7511868Z   yaml             35       1                                                                                           
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:20.7512644Z   dockerfile        6       1                                                                                           
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:20.7513255Z   html              1       1                                                                                           
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:20.7513820Z                                                                                                                         
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3185639Z SCA findings adjustment: No SCA rules to adjust
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3186925Z [WARN] Other syntax error at line Dockerfile.yaml:6:
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3187792Z  (approximate error location; error nearby after) error calling parser: did not find expected <document start> character 0 position 0 returned: 0
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3673259Z 
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3673688Z ========================================
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3674077Z Files skipped:
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3674328Z ========================================
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3674541Z 
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3674661Z   Always skipped by Semgrep:
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3674845Z 
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3675184Z    • <none>
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3675315Z 
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3675420Z   Skipped by .gitignore:
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3675764Z   (Disable by passing --no-git-ignore)
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3675990Z 
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3676258Z    • <all files not listed by `git ls-files` were skipped>
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3676533Z 
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3676612Z   Skipped by .semgrepignore:
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3677284Z   - https://semgrep.dev/docs/ignoring-files-folders-code/#understand-semgrep-defaults
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3677702Z 
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3677852Z    • <none>
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3677998Z 
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3678129Z   Skipped by --include patterns:
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3678325Z 
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3678458Z    • <none>
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3678590Z 
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3678702Z   Skipped by --exclude patterns:
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3678898Z 
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3679069Z    • .github/workflows/IMP-devsecops.yml
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3679296Z 
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3679412Z   Files that couldn't be accessed:
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3679615Z 
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3679734Z    • <none>
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3679841Z 
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3680175Z   Skipped by limiting to files smaller than 1000000 bytes:
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3680466Z   (Adjust with the --max-target-bytes flag)
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3680611Z 
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3680703Z    • <none>
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3680787Z 
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3680920Z   Partially analyzed due to parsing or internal Semgrep errors
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3681122Z 
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3681209Z    • Dockerfile.yaml
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3681316Z 
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3681378Z                 
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3681527Z                 
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3681722Z ┌──────────────┐
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3681893Z │ Scan Summary │
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3682060Z └──────────────┘
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3682246Z ✅ Scan completed successfully.
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3682640Z  • Findings: 0 (0 blocking)
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3682842Z  • Rules run: 346
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3683023Z  • Targets scanned: 18
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3683216Z  • Parsed lines: ~100.0%
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3683407Z  • Scan skipped: 
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3683623Z    ◦ Matching --exclude patterns: 1
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3683864Z  • Scan was limited to files tracked by git
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3684088Z Ran 346 rules on 18 files: 0 findings.
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3684398Z (need more rules? `semgrep login` for additional free Semgrep Registry rules)
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3684633Z 
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3726297Z 
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3726882Z A new version of Semgrep is available. See https://semgrep.dev/docs/upgrading
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3730452Z If Semgrep missed a finding, please send us feedback to let us know!
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3730984Z See https://semgrep.dev/docs/reporting-false-negatives/
+Semgrep SAST Scan	Run Semgrep SAST	2026-10-27T07:03:21.3778584Z Sending pseudonymous metrics since metrics are configured to AUTO, registry usage is True, and login status is False
+Semgrep SAST Scan	Post Checkout Source Code	﻿2026-10-27T07:03:21.9285845Z Post job cleanup.
+Semgrep SAST Scan	Post Checkout Source Code	2026-10-27T07:03:21.9291970Z ##[command]/usr/bin/docker exec  4f46bd4c954f1b532959e065333534693886bc7513c5c8050cce81e179c08aff sh -c "cat /etc/*release | grep ^ID"
+Semgrep SAST Scan	Post Checkout Source Code	2026-10-27T07:03:22.0934139Z [command]/usr/bin/git version
+Semgrep SAST Scan	Post Checkout Source Code	2026-10-27T07:03:22.0987120Z git version 2.52.0
+Semgrep SAST Scan	Post Checkout Source Code	2026-10-27T07:03:22.1058484Z Copying '/github/home/.gitconfig' to '/__w/_temp/22eb6fef-22fa-45a6-b90f-a5ec4fa97d23/.gitconfig'
+Semgrep SAST Scan	Post Checkout Source Code	2026-10-27T07:03:22.1073213Z Temporarily overriding HOME='/__w/_temp/22eb6fef-22fa-45a6-b90f-a5ec4fa97d23' before making global git config changes
+Semgrep SAST Scan	Post Checkout Source Code	2026-10-27T07:03:22.1074562Z Adding repository directory to the temporary git global config as a safe directory
+Semgrep SAST Scan	Post Checkout Source Code	2026-10-27T07:03:22.1081983Z [command]/usr/bin/git config --global --add safe.directory /__w/DevSecOps-pipeling/DevSecOps-pipeling
+Semgrep SAST Scan	Post Checkout Source Code	2026-10-27T07:03:22.1115867Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Semgrep SAST Scan	Post Checkout Source Code	2026-10-27T07:03:22.1169211Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Semgrep SAST Scan	Post Checkout Source Code	2026-10-27T07:03:22.1399453Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Semgrep SAST Scan	Post Checkout Source Code	2026-10-27T07:03:22.1436472Z http.https://github.com/.extraheader
+Semgrep SAST Scan	Post Checkout Source Code	2026-10-27T07:03:22.1455328Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Semgrep SAST Scan	Post Checkout Source Code	2026-10-27T07:03:22.1494014Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Semgrep SAST Scan	Post Checkout Source Code	2026-10-27T07:03:22.1721806Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Semgrep SAST Scan	Post Checkout Source Code	2026-10-27T07:03:22.1754622Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Semgrep SAST Scan	Stop containers	﻿2026-10-27T07:03:22.2135073Z Stop and remove container: 2f505cb2ffe942168e687a29592e6aaf_semgrepsemgrep_ecc341
+Semgrep SAST Scan	Stop containers	2026-10-27T07:03:22.2138644Z ##[command]/usr/bin/docker rm --force 4f46bd4c954f1b532959e065333534693886bc7513c5c8050cce81e179c08aff
+Semgrep SAST Scan	Stop containers	2026-10-27T07:03:22.3158353Z 4f46bd4c954f1b532959e065333534693886bc7513c5c8050cce81e179c08aff
+Semgrep SAST Scan	Stop containers	2026-10-27T07:03:22.3182300Z Remove container network: github_network_13f5ca5283004f6396b8f5b19a84a206
+Semgrep SAST Scan	Stop containers	2026-10-27T07:03:22.3186681Z ##[command]/usr/bin/docker network rm github_network_13f5ca5283004f6396b8f5b19a84a206
+Semgrep SAST Scan	Stop containers	2026-10-27T07:03:22.4084904Z github_network_13f5ca5283004f6396b8f5b19a84a206
+Semgrep SAST Scan	Complete job	﻿2026-10-27T07:03:22.4148405Z Cleaning up orphan processes
+Semgrep SAST Scan	Complete job	2026-10-27T07:03:22.4433382Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Pylint Code Quality Gate	Set up job	﻿2026-10-27T07:02:57.4079765Z Current runner version: '2.338.0'
+Pylint Code Quality Gate	Set up job	2026-10-27T07:02:57.4106373Z ##[group]Runner Image Provisioner
+Pylint Code Quality Gate	Set up job	2026-10-27T07:02:57.4107288Z Hosted Compute Agent
+Pylint Code Quality Gate	Set up job	2026-10-27T07:02:57.4107955Z Version: 20261021.618
+Pylint Code Quality Gate	Set up job	2026-10-27T07:02:57.4108596Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+Pylint Code Quality Gate	Set up job	2026-10-27T07:02:57.4109534Z Build Date: 2026-10-21T00:45:21Z
+Pylint Code Quality Gate	Set up job	2026-10-27T07:02:57.4110331Z Worker ID: {3ed8d10e-615f-40da-956b-15228e77900b}
+Pylint Code Quality Gate	Set up job	2026-10-27T07:02:57.4111035Z Region: eastus2
+Pylint Code Quality Gate	Set up job	2026-10-27T07:02:57.4111659Z Cloud: Azure
+Pylint Code Quality Gate	Set up job	2026-10-27T07:02:57.4112198Z ##[endgroup]
+Pylint Code Quality Gate	Set up job	2026-10-27T07:02:57.4114087Z ##[group]Operating System
+Pylint Code Quality Gate	Set up job	2026-10-27T07:02:57.4114881Z Ubuntu
+Pylint Code Quality Gate	Set up job	2026-10-27T07:02:57.4115401Z 24.04.5
+Pylint Code Quality Gate	Set up job	2026-10-27T07:02:57.4115940Z LTS
+Pylint Code Quality Gate	Set up job	2026-10-27T07:02:57.4116462Z ##[endgroup]
+Pylint Code Quality Gate	Set up job	2026-10-27T07:02:57.4117008Z ##[group]Runner Image
+Pylint Code Quality Gate	Set up job	2026-10-27T07:02:57.4117677Z Image: ubuntu-24.04
+Pylint Code Quality Gate	Set up job	2026-10-27T07:02:57.4118239Z Version: 20261012.334.1
+Pylint Code Quality Gate	Set up job	2026-10-27T07:02:57.4119747Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+Pylint Code Quality Gate	Set up job	2026-10-27T07:02:57.4121482Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+Pylint Code Quality Gate	Set up job	2026-10-27T07:02:57.4122529Z ##[endgroup]
+Pylint Code Quality Gate	Set up job	2026-10-27T07:02:57.4123754Z ##[group]GITHUB_TOKEN Permissions
+Pylint Code Quality Gate	Set up job	2026-10-27T07:02:57.4126018Z Contents: read
+Pylint Code Quality Gate	Set up job	2026-10-27T07:02:57.4126698Z Metadata: read
+Pylint Code Quality Gate	Set up job	2026-10-27T07:02:57.4127452Z Packages: read
+Pylint Code Quality Gate	Set up job	2026-10-27T07:02:57.4128095Z ##[endgroup]
+Pylint Code Quality Gate	Set up job	2026-10-27T07:02:57.4131120Z Secret source: Actions
+Pylint Code Quality Gate	Set up job	2026-10-27T07:02:57.4132636Z Cache mode: write
+Pylint Code Quality Gate	Set up job	2026-10-27T07:02:57.4134319Z Prepare workflow directory
+Pylint Code Quality Gate	Set up job	2026-10-27T07:02:57.4484250Z Prepare all required actions
+Pylint Code Quality Gate	Set up job	2026-10-27T07:02:57.4534744Z Getting action download info
+Pylint Code Quality Gate	Set up job	2026-10-27T07:02:57.7073506Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+Pylint Code Quality Gate	Set up job	2026-10-27T07:02:57.8032333Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+Pylint Code Quality Gate	Set up job	2026-10-27T07:02:57.9887744Z Complete job name: Pylint Code Quality Gate
+Pylint Code Quality Gate	Checkout Source Code	﻿2026-10-27T07:02:58.0662582Z ##[group]Run actions/checkout@v4
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.0663474Z with:
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.0663970Z   repository: Kenn6-sIlennt/DevSecOps-pipeling
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.0667882Z   token: ***
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.0668321Z   ssh-strict: true
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.0668965Z   ssh-user: git
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.0669436Z   persist-credentials: true
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.0669922Z   clean: true
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.0670368Z   sparse-checkout-cone-mode: true
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.0670890Z   fetch-depth: 1
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.0671321Z   fetch-tags: false
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.0671765Z   show-progress: true
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.0672206Z   lfs: false
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.0672617Z   submodules: false
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.0673059Z   set-safe-directory: true
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.0673553Z   allow-unsafe-pr-checkout: false
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.0674333Z ##[endgroup]
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.3820357Z Syncing repository: Kenn6-sIlennt/DevSecOps-pipeling
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.3823555Z ##[group]Getting Git version info
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.3824748Z Working directory is '/home/runner/work/DevSecOps-pipeling/DevSecOps-pipeling'
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.3827172Z [command]/usr/bin/git version
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.3947866Z git version 2.55.0
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.3973305Z ##[endgroup]
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.3989964Z Temporarily overriding HOME='/home/runner/work/_temp/3855c638-48e2-479b-9acc-f2f0399fedfa' before making global git config changes
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.3991552Z Adding repository directory to the temporary git global config as a safe directory
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.3995069Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/DevSecOps-pipeling/DevSecOps-pipeling
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.4054440Z Deleting the contents of '/home/runner/work/DevSecOps-pipeling/DevSecOps-pipeling'
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.4061738Z ##[group]Initializing the repository
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.4067813Z [command]/usr/bin/git init /home/runner/work/DevSecOps-pipeling/DevSecOps-pipeling
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.4247664Z hint: Using 'master' as the name for the initial branch. This default branch name
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.4260071Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.4262669Z hint: to use in all of your new repositories, which will suppress this warning,
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.4264694Z hint: call:
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.4265815Z hint:
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.4271077Z hint: 	git config --global init.defaultBranch <name>
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.4272708Z hint:
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.4274304Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.4276552Z hint: 'development'. The just-created branch can be renamed via this command:
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.4278499Z hint:
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.4280007Z hint: 	git branch -m <name>
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.4281433Z hint:
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.4283121Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.4286166Z Initialized empty Git repository in /home/runner/work/DevSecOps-pipeling/DevSecOps-pipeling/.git/
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.4291811Z [command]/usr/bin/git remote add origin https://github.com/Kenn6-sIlennt/DevSecOps-pipeling
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.4347650Z ##[endgroup]
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.4349712Z ##[group]Disabling automatic garbage collection
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.4354186Z [command]/usr/bin/git config --local gc.auto 0
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.4410746Z ##[endgroup]
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.4412314Z ##[group]Setting up auth
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.4424504Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.4473433Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.4920495Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.4957336Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.5195515Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.5235556Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.5485264Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.5535801Z ##[endgroup]
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.5537209Z ##[group]Fetching the repository
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.5553248Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +90f3eed4cb5e7e4bb4871cc25242484fb314af2f:refs/remotes/pull/7/merge
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.7774130Z From https://github.com/Kenn6-sIlennt/DevSecOps-pipeling
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.7775974Z  * [new ref]         90f3eed4cb5e7e4bb4871cc25242484fb314af2f -> pull/7/merge
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.7779499Z ##[endgroup]
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.7780949Z ##[group]Determining the checkout info
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.7782565Z ##[endgroup]
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.7788117Z [command]/usr/bin/git sparse-checkout disable
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.7853412Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.7886063Z ##[group]Checking out the ref
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.7889396Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/7/merge
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.7955194Z Note: switching to 'refs/remotes/pull/7/merge'.
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.7956094Z 
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.7956782Z You are in 'detached HEAD' state. You can look around, make experimental
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.7958866Z changes and commit them, and you can discard any commits you make in this
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.7959965Z state without impacting any branches by switching back to a branch.
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.7960571Z 
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.7960961Z If you want to create a new branch to retain commits you create, you may
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.7962200Z do so (now or later) by using -c with the switch command. Example:
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.7962773Z 
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.7963012Z   git switch -c <new-branch-name>
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.7963406Z 
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.7963633Z Or undo this operation with:
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.7964011Z 
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.7964217Z   git switch -
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.7964528Z 
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.7965002Z Turn off this advice by setting config variable advice.detachedHead to false
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.7965719Z 
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.7966991Z HEAD is now at 90f3eed Merge b03056598aa923dab0a5fb2eecabaa32db077d6a into 89cf68c342d2c70f127450dd02109b5e2b024cf2
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.7969967Z ##[endgroup]
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.8011700Z [command]/usr/bin/git log -1 --format=%H
+Pylint Code Quality Gate	Checkout Source Code	2026-10-27T07:02:58.8038180Z 90f3eed4cb5e7e4bb4871cc25242484fb314af2f
+Pylint Code Quality Gate	Setup Python	﻿2026-10-27T07:02:58.8376664Z ##[group]Run actions/setup-python@v5
+Pylint Code Quality Gate	Setup Python	2026-10-27T07:02:58.8377349Z with:
+Pylint Code Quality Gate	Setup Python	2026-10-27T07:02:58.8377803Z   python-version: 3.10
+Pylint Code Quality Gate	Setup Python	2026-10-27T07:02:58.8378309Z   check-latest: false
+Pylint Code Quality Gate	Setup Python	2026-10-27T07:02:58.8382675Z   token: ***
+Pylint Code Quality Gate	Setup Python	2026-10-27T07:02:58.8383178Z   update-environment: true
+Pylint Code Quality Gate	Setup Python	2026-10-27T07:02:58.8383726Z   allow-prereleases: false
+Pylint Code Quality Gate	Setup Python	2026-10-27T07:02:58.8384248Z   freethreaded: false
+Pylint Code Quality Gate	Setup Python	2026-10-27T07:02:58.8384734Z ##[endgroup]
+Pylint Code Quality Gate	Setup Python	2026-10-27T07:02:58.9861272Z ##[group]Installed versions
+Pylint Code Quality Gate	Setup Python	2026-10-27T07:02:58.9965394Z (node:2298) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Pylint Code Quality Gate	Setup Python	2026-10-27T07:02:58.9967495Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Pylint Code Quality Gate	Setup Python	2026-10-27T07:02:58.9969410Z Successfully set up CPython (3.10.22)
+Pylint Code Quality Gate	Setup Python	2026-10-27T07:02:58.9971141Z ##[endgroup]
+Pylint Code Quality Gate	Install Dependencies	﻿2026-10-27T07:02:59.0206559Z ##[group]Run python -m pip install --upgrade pip
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:02:59.0208582Z ^[[36;1mpython -m pip install --upgrade pip^[[0m
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:02:59.0210410Z ^[[36;1mpip install pylint^[[0m
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:02:59.0212121Z ^[[36;1mpip install -r requirements.txt^[[0m
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:02:59.0553463Z shell: /usr/bin/bash -e {0}
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:02:59.0554370Z env:
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:02:59.0555187Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.22/x64
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:02:59.0556745Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.22/x64/lib/pkgconfig
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:02:59.0558318Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:02:59.0559920Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:02:59.0561337Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:02:59.0562767Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.22/x64/lib
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:02:59.0563928Z ##[endgroup]
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:02:59.8429087Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages (26.2.1)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:02:59.9468336Z Collecting pip
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:00.0102868Z   Downloading pip-26.2.2-py3-none-any.whl.metadata (4.6 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:00.0219928Z Downloading pip-26.2.2-py3-none-any.whl (1.8 MB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:00.1417264Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 17.9 MB/s  0:00:00
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:00.2021027Z Installing collected packages: pip
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:00.2022847Z   Attempting uninstall: pip
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:00.2029119Z     Found existing installation: pip 26.2.1
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:00.2573341Z     Uninstalling pip-26.2.1:
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:00.2646132Z       Successfully uninstalled pip-26.2.1
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:01.1105630Z Successfully installed pip-26.2.2
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:01.6076573Z Collecting pylint
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:01.6685587Z   Downloading pylint-4.1.3-py3-none-any.whl.metadata (12 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:01.7107113Z Collecting astroid<=4.4,>=4.3.4 (from pylint)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:01.7180969Z   Downloading astroid-4.3.4-py3-none-any.whl.metadata (4.4 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:01.7352852Z Collecting dill>=0.2 (from pylint)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:01.7428975Z   Downloading dill-0.4.1-py3-none-any.whl.metadata (10 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:01.7906379Z Collecting isort!=5.13,<10,>=5 (from pylint)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:01.7985827Z   Downloading isort-9.0.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (11 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:01.8144457Z Collecting mccabe<0.8,>=0.6 (from pylint)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:01.8217509Z   Downloading mccabe-0.7.0-py2.py3-none-any.whl.metadata (5.0 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:01.8509601Z Collecting platformdirs>=2.2 (from pylint)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:01.8580252Z   Downloading platformdirs-4.12.4-py3-none-any.whl.metadata (5.5 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:01.8959583Z Collecting tomli>=1.1 (from pylint)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:01.9035016Z   Downloading tomli-2.5.0-py3-none-any.whl.metadata (10 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:01.9242307Z Collecting tomlkit>=0.10.1 (from pylint)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:01.9314068Z   Downloading tomlkit-0.15.2-py3-none-any.whl.metadata (3.4 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:01.9537519Z Collecting typing-extensions>=4 (from astroid<=4.4,>=4.3.4->pylint)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:01.9611668Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:01.9751611Z Collecting mypy-extensions>=1.1.0 (from isort!=5.13,<10,>=5->pylint)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:01.9826270Z   Downloading mypy_extensions-1.1.0-py3-none-any.whl.metadata (1.1 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:01.9946146Z Downloading pylint-4.1.3-py3-none-any.whl (588 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:02.0213424Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 589.0/589.0 kB 37.9 MB/s  0:00:00
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:02.0290372Z Downloading astroid-4.3.4-py3-none-any.whl (288 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:02.0452566Z Downloading isort-9.0.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.6 MB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:02.0662460Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 73.4 MB/s  0:00:00
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:02.0733536Z Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:02.0824684Z Downloading dill-0.4.1-py3-none-any.whl (120 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:02.0922882Z Downloading mypy_extensions-1.1.0-py3-none-any.whl (5.0 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:02.1015428Z Downloading platformdirs-4.12.4-py3-none-any.whl (32 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:02.1106399Z Downloading tomli-2.5.0-py3-none-any.whl (14 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:02.1196407Z Downloading tomlkit-0.15.2-py3-none-any.whl (52 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:02.1286733Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:02.1864068Z Installing collected packages: typing-extensions, tomlkit, tomli, platformdirs, mypy-extensions, mccabe, dill, isort, astroid, pylint
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:02.9598924Z 
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:02.9621168Z Successfully installed astroid-4.3.4 dill-0.4.1 isort-9.0.2 mccabe-0.7.0 mypy-extensions-1.1.0 platformdirs-4.12.4 pylint-4.1.3 tomli-2.5.0 tomlkit-0.15.2 typing-extensions-4.16.0
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:03.4003982Z Collecting flask (from -r requirements.txt (line 1))
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:03.4581899Z   Downloading flask-3.1.3-py3-none-any.whl.metadata (3.2 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:03.4750743Z Collecting blinker>=1.9.0 (from flask->-r requirements.txt (line 1))
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:03.4826497Z   Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:03.5066679Z Collecting click>=8.1.3 (from flask->-r requirements.txt (line 1))
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:03.5147327Z   Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:03.5318345Z Collecting itsdangerous>=2.2.0 (from flask->-r requirements.txt (line 1))
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:03.5397294Z   Downloading itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:03.5585457Z Collecting jinja2>=3.1.2 (from flask->-r requirements.txt (line 1))
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:03.5669515Z   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:03.6567913Z Collecting markupsafe>=2.1.1 (from flask->-r requirements.txt (line 1))
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:03.6651098Z   Downloading markupsafe-3.0.4-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:03.6887171Z Collecting werkzeug>=3.1.0 (from flask->-r requirements.txt (line 1))
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:03.6965673Z   Downloading werkzeug-3.1.9-py3-none-any.whl.metadata (4.1 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:03.7105270Z Downloading flask-3.1.3-py3-none-any.whl (103 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:03.7324245Z Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:03.7417461Z Downloading click-8.5.0-py3-none-any.whl (125 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:03.7577951Z Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:03.7672613Z Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:03.7783749Z Downloading markupsafe-3.0.4-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (20 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:03.7880226Z Downloading werkzeug-3.1.9-py3-none-any.whl (228 kB)
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:03.8373663Z Installing collected packages: markupsafe, itsdangerous, click, blinker, werkzeug, jinja2, flask
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:04.1638475Z 
+Pylint Code Quality Gate	Install Dependencies	2026-10-27T07:03:04.1669213Z Successfully installed blinker-1.9.0 click-8.5.0 flask-3.1.3 itsdangerous-2.2.0 jinja2-3.1.6 markupsafe-3.0.4 werkzeug-3.1.9
+Pylint Code Quality Gate	Run Pylint Check	﻿2026-10-27T07:03:04.2128019Z ##[group]Run pylint --fail-under=9.0 app.py
+Pylint Code Quality Gate	Run Pylint Check	2026-10-27T07:03:04.2128419Z ^[[36;1mpylint --fail-under=9.0 app.py^[[0m
+Pylint Code Quality Gate	Run Pylint Check	2026-10-27T07:03:04.2194817Z shell: /usr/bin/bash -e {0}
+Pylint Code Quality Gate	Run Pylint Check	2026-10-27T07:03:04.2195075Z env:
+Pylint Code Quality Gate	Run Pylint Check	2026-10-27T07:03:04.2195339Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.22/x64
+Pylint Code Quality Gate	Run Pylint Check	2026-10-27T07:03:04.2195786Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.22/x64/lib/pkgconfig
+Pylint Code Quality Gate	Run Pylint Check	2026-10-27T07:03:04.2196212Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+Pylint Code Quality Gate	Run Pylint Check	2026-10-27T07:03:04.2196602Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+Pylint Code Quality Gate	Run Pylint Check	2026-10-27T07:03:04.2196977Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+Pylint Code Quality Gate	Run Pylint Check	2026-10-27T07:03:04.2197357Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.22/x64/lib
+Pylint Code Quality Gate	Run Pylint Check	2026-10-27T07:03:04.2197681Z ##[endgroup]
+Pylint Code Quality Gate	Run Pylint Check	2026-10-27T07:03:07.1229402Z 
+Pylint Code Quality Gate	Run Pylint Check	2026-10-27T07:03:07.1230003Z ------------------------------------
+Pylint Code Quality Gate	Run Pylint Check	2026-10-27T07:03:07.1230502Z Your code has been rated at 10.00/10
+Pylint Code Quality Gate	Run Pylint Check	2026-10-27T07:03:07.1230750Z 
+Pylint Code Quality Gate	Post Setup Python	﻿2026-10-27T07:03:07.4463165Z Post job cleanup.
+Pylint Code Quality Gate	Post Setup Python	2026-10-27T07:03:07.5639785Z (node:2384) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Pylint Code Quality Gate	Post Setup Python	2026-10-27T07:03:07.5640708Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Pylint Code Quality Gate	Post Checkout Source Code	﻿2026-10-27T07:03:07.5893790Z Post job cleanup.
+Pylint Code Quality Gate	Post Checkout Source Code	2026-10-27T07:03:07.6934230Z [command]/usr/bin/git version
+Pylint Code Quality Gate	Post Checkout Source Code	2026-10-27T07:03:07.6979699Z git version 2.55.0
+Pylint Code Quality Gate	Post Checkout Source Code	2026-10-27T07:03:07.7024040Z Temporarily overriding HOME='/home/runner/work/_temp/c2f41844-70a8-4016-a694-55d388e7e3a5' before making global git config changes
+Pylint Code Quality Gate	Post Checkout Source Code	2026-10-27T07:03:07.7025576Z Adding repository directory to the temporary git global config as a safe directory
+Pylint Code Quality Gate	Post Checkout Source Code	2026-10-27T07:03:07.7030990Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/DevSecOps-pipeling/DevSecOps-pipeling
+Pylint Code Quality Gate	Post Checkout Source Code	2026-10-27T07:03:07.7076643Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Pylint Code Quality Gate	Post Checkout Source Code	2026-10-27T07:03:07.7118546Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Pylint Code Quality Gate	Post Checkout Source Code	2026-10-27T07:03:07.7440533Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Pylint Code Quality Gate	Post Checkout Source Code	2026-10-27T07:03:07.7469476Z http.https://github.com/.extraheader
+Pylint Code Quality Gate	Post Checkout Source Code	2026-10-27T07:03:07.7487673Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Pylint Code Quality Gate	Post Checkout Source Code	2026-10-27T07:03:07.7509773Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Pylint Code Quality Gate	Post Checkout Source Code	2026-10-27T07:03:07.7792202Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Pylint Code Quality Gate	Post Checkout Source Code	2026-10-27T07:03:07.7835695Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Pylint Code Quality Gate	Complete job	﻿2026-10-27T07:03:07.8206239Z Cleaning up orphan processes
+Pylint Code Quality Gate	Complete job	2026-10-27T07:03:07.8508068Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Python Dependency Security Audit	Set up job	﻿2026-10-27T07:02:57.5141370Z Current runner version: '2.338.0'
+Python Dependency Security Audit	Set up job	2026-10-27T07:02:57.5180880Z ##[group]Runner Image Provisioner
+Python Dependency Security Audit	Set up job	2026-10-27T07:02:57.5182346Z Hosted Compute Agent
+Python Dependency Security Audit	Set up job	2026-10-27T07:02:57.5183446Z Version: 20261021.618
+Python Dependency Security Audit	Set up job	2026-10-27T07:02:57.5184621Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+Python Dependency Security Audit	Set up job	2026-10-27T07:02:57.5186234Z Build Date: 2026-10-21T00:45:21Z
+Python Dependency Security Audit	Set up job	2026-10-27T07:02:57.5187700Z Worker ID: {1f013569-2eb7-4c09-a7d1-88f865f345e7}
+Python Dependency Security Audit	Set up job	2026-10-27T07:02:57.5189098Z Region: eastus2
+Python Dependency Security Audit	Set up job	2026-10-27T07:02:57.5190090Z Cloud: Azure
+Python Dependency Security Audit	Set up job	2026-10-27T07:02:57.5190990Z ##[endgroup]
+Python Dependency Security Audit	Set up job	2026-10-27T07:02:57.5193688Z ##[group]Operating System
+Python Dependency Security Audit	Set up job	2026-10-27T07:02:57.5195250Z Ubuntu
+Python Dependency Security Audit	Set up job	2026-10-27T07:02:57.5196150Z 24.04.5
+Python Dependency Security Audit	Set up job	2026-10-27T07:02:57.5197128Z LTS
+Python Dependency Security Audit	Set up job	2026-10-27T07:02:57.5197995Z ##[endgroup]
+Python Dependency Security Audit	Set up job	2026-10-27T07:02:57.5199109Z ##[group]Runner Image
+Python Dependency Security Audit	Set up job	2026-10-27T07:02:57.5200288Z Image: ubuntu-24.04
+Python Dependency Security Audit	Set up job	2026-10-27T07:02:57.5201331Z Version: 20261012.334.1
+Python Dependency Security Audit	Set up job	2026-10-27T07:02:57.5203359Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+Python Dependency Security Audit	Set up job	2026-10-27T07:02:57.5206904Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+Python Dependency Security Audit	Set up job	2026-10-27T07:02:57.5208667Z ##[endgroup]
+Python Dependency Security Audit	Set up job	2026-10-27T07:02:57.5210761Z ##[group]GITHUB_TOKEN Permissions
+Python Dependency Security Audit	Set up job	2026-10-27T07:02:57.5213844Z Contents: read
+Python Dependency Security Audit	Set up job	2026-10-27T07:02:57.5215277Z Metadata: read
+Python Dependency Security Audit	Set up job	2026-10-27T07:02:57.5216319Z Packages: read
+Python Dependency Security Audit	Set up job	2026-10-27T07:02:57.5217411Z ##[endgroup]
+Python Dependency Security Audit	Set up job	2026-10-27T07:02:57.5220611Z Secret source: Actions
+Python Dependency Security Audit	Set up job	2026-10-27T07:02:57.5222137Z Cache mode: write
+Python Dependency Security Audit	Set up job	2026-10-27T07:02:57.5223719Z Prepare workflow directory
+Python Dependency Security Audit	Set up job	2026-10-27T07:02:57.5747714Z Prepare all required actions
+Python Dependency Security Audit	Set up job	2026-10-27T07:02:57.5821843Z Getting action download info
+Python Dependency Security Audit	Set up job	2026-10-27T07:02:57.7532024Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+Python Dependency Security Audit	Set up job	2026-10-27T07:02:57.8686324Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+Python Dependency Security Audit	Set up job	2026-10-27T07:02:58.0539029Z Complete job name: Python Dependency Security Audit
+Python Dependency Security Audit	Checkout Source Code	﻿2026-10-27T07:02:58.1339282Z ##[group]Run actions/checkout@v4
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.1340197Z with:
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.1340699Z   repository: Kenn6-sIlennt/DevSecOps-pipeling
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.1344590Z   token: ***
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.1345306Z   ssh-strict: true
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.1345754Z   ssh-user: git
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.1346199Z   persist-credentials: true
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.1346688Z   clean: true
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.1347139Z   sparse-checkout-cone-mode: true
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.1347670Z   fetch-depth: 1
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.1348102Z   fetch-tags: false
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.1348546Z   show-progress: true
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.1348990Z   lfs: false
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.1349402Z   submodules: false
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.1349841Z   set-safe-directory: true
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.1350344Z   allow-unsafe-pr-checkout: false
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.1351134Z ##[endgroup]
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4327053Z Syncing repository: Kenn6-sIlennt/DevSecOps-pipeling
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4330144Z ##[group]Getting Git version info
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4331841Z Working directory is '/home/runner/work/DevSecOps-pipeling/DevSecOps-pipeling'
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4334046Z [command]/usr/bin/git version
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4424333Z git version 2.55.0
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4450542Z ##[endgroup]
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4466654Z Temporarily overriding HOME='/home/runner/work/_temp/5301ea1c-e74c-46a7-a826-3109c0051b6b' before making global git config changes
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4469415Z Adding repository directory to the temporary git global config as a safe directory
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4472825Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/DevSecOps-pipeling/DevSecOps-pipeling
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4546023Z Deleting the contents of '/home/runner/work/DevSecOps-pipeling/DevSecOps-pipeling'
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4556546Z ##[group]Initializing the repository
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4558062Z [command]/usr/bin/git init /home/runner/work/DevSecOps-pipeling/DevSecOps-pipeling
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4676152Z hint: Using 'master' as the name for the initial branch. This default branch name
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4679187Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4684719Z hint: to use in all of your new repositories, which will suppress this warning,
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4687110Z hint: call:
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4688348Z hint:
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4689703Z hint: 	git config --global init.defaultBranch <name>
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4691389Z hint:
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4692752Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4695838Z hint: 'development'. The just-created branch can be renamed via this command:
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4697883Z hint:
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4699118Z hint: 	git branch -m <name>
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4700616Z hint:
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4702789Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4705813Z Initialized empty Git repository in /home/runner/work/DevSecOps-pipeling/DevSecOps-pipeling/.git/
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4710297Z [command]/usr/bin/git remote add origin https://github.com/Kenn6-sIlennt/DevSecOps-pipeling
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4767374Z ##[endgroup]
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4769073Z ##[group]Disabling automatic garbage collection
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4771055Z [command]/usr/bin/git config --local gc.auto 0
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4808149Z ##[endgroup]
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4809734Z ##[group]Setting up auth
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4816917Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.4854629Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.5322195Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.5367944Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.5636588Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.5681379Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.5927854Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.5974647Z ##[endgroup]
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.5976632Z ##[group]Fetching the repository
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.5993907Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +90f3eed4cb5e7e4bb4871cc25242484fb314af2f:refs/remotes/pull/7/merge
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.8450030Z From https://github.com/Kenn6-sIlennt/DevSecOps-pipeling
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.8451299Z  * [new ref]         90f3eed4cb5e7e4bb4871cc25242484fb314af2f -> pull/7/merge
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.8455322Z ##[endgroup]
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.8458408Z ##[group]Determining the checkout info
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.8459469Z ##[endgroup]
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.8464052Z [command]/usr/bin/git sparse-checkout disable
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.8520899Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.8563889Z ##[group]Checking out the ref
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.8567747Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/7/merge
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.8633910Z Note: switching to 'refs/remotes/pull/7/merge'.
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.8635255Z 
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.8636043Z You are in 'detached HEAD' state. You can look around, make experimental
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.8637942Z changes and commit them, and you can discard any commits you make in this
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.8639779Z state without impacting any branches by switching back to a branch.
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.8640812Z 
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.8641497Z If you want to create a new branch to retain commits you create, you may
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.8642929Z do so (now or later) by using -c with the switch command. Example:
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.8643499Z 
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.8643737Z   git switch -c <new-branch-name>
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.8644112Z 
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.8644473Z Or undo this operation with:
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.8645355Z 
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.8645722Z   git switch -
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.8646188Z 
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.8646772Z Turn off this advice by setting config variable advice.detachedHead to false
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.8647425Z 
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.8648130Z HEAD is now at 90f3eed Merge b03056598aa923dab0a5fb2eecabaa32db077d6a into 89cf68c342d2c70f127450dd02109b5e2b024cf2
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.8650673Z ##[endgroup]
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.8694190Z [command]/usr/bin/git log -1 --format=%H
+Python Dependency Security Audit	Checkout Source Code	2026-10-27T07:02:58.8723312Z 90f3eed4cb5e7e4bb4871cc25242484fb314af2f
+Python Dependency Security Audit	Setup Python	﻿2026-10-27T07:02:58.9043989Z ##[group]Run actions/setup-python@v5
+Python Dependency Security Audit	Setup Python	2026-10-27T07:02:58.9044692Z with:
+Python Dependency Security Audit	Setup Python	2026-10-27T07:02:58.9045352Z   python-version: 3.10
+Python Dependency Security Audit	Setup Python	2026-10-27T07:02:58.9045866Z   check-latest: false
+Python Dependency Security Audit	Setup Python	2026-10-27T07:02:58.9049872Z   token: ***
+Python Dependency Security Audit	Setup Python	2026-10-27T07:02:58.9050345Z   update-environment: true
+Python Dependency Security Audit	Setup Python	2026-10-27T07:02:58.9050884Z   allow-prereleases: false
+Python Dependency Security Audit	Setup Python	2026-10-27T07:02:58.9051399Z   freethreaded: false
+Python Dependency Security Audit	Setup Python	2026-10-27T07:02:58.9051878Z ##[endgroup]
+Python Dependency Security Audit	Setup Python	2026-10-27T07:02:59.0484001Z ##[group]Installed versions
+Python Dependency Security Audit	Setup Python	2026-10-27T07:02:59.0608895Z (node:2297) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Python Dependency Security Audit	Setup Python	2026-10-27T07:02:59.0612133Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Python Dependency Security Audit	Setup Python	2026-10-27T07:02:59.0614408Z Successfully set up CPython (3.10.22)
+Python Dependency Security Audit	Setup Python	2026-10-27T07:02:59.0627689Z ##[endgroup]
+Python Dependency Security Audit	Install pip-audit	﻿2026-10-27T07:02:59.0824276Z ##[group]Run python -m pip install --upgrade pip
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:02:59.0826399Z ^[[36;1mpython -m pip install --upgrade pip^[[0m
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:02:59.0828310Z ^[[36;1mpip install pip-audit^[[0m
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:02:59.0829707Z ^[[36;1mpip install -r requirements.txt^[[0m
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:02:59.1172535Z shell: /usr/bin/bash -e {0}
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:02:59.1173779Z env:
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:02:59.1175155Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.22/x64
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:02:59.1177203Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.22/x64/lib/pkgconfig
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:02:59.1179260Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:02:59.1180978Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:02:59.1182669Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:02:59.1184369Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.22/x64/lib
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:02:59.1185928Z ##[endgroup]
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:02:59.8712669Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages (26.2.1)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:00.0006679Z Collecting pip
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:00.0661913Z   Downloading pip-26.2.2-py3-none-any.whl.metadata (4.6 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:00.0818808Z Downloading pip-26.2.2-py3-none-any.whl (1.8 MB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:00.1737279Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 24.7 MB/s  0:00:00
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:00.2388514Z Installing collected packages: pip
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:00.2390807Z   Attempting uninstall: pip
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:00.2398162Z     Found existing installation: pip 26.2.1
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:00.3930435Z     Uninstalling pip-26.2.1:
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:00.4003466Z       Successfully uninstalled pip-26.2.1
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:01.2760931Z Successfully installed pip-26.2.2
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:01.7566928Z Collecting pip-audit
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:01.8163133Z   Downloading pip_audit-2.10.1-py3-none-any.whl.metadata (28 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:01.8462760Z Collecting CacheControl>=0.13.0 (from CacheControl[filecache]>=0.13.0->pip-audit)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:01.8545937Z   Downloading cachecontrol-0.14.4-py3-none-any.whl.metadata (3.1 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:01.9128896Z Collecting cyclonedx-python-lib<12,>=5 (from pip-audit)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:01.9212918Z   Downloading cyclonedx_python_lib-11.12.0-py3-none-any.whl.metadata (6.9 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:01.9441703Z Collecting packaging>=23.0.0 (from pip-audit)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:01.9524839Z   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:01.9700968Z Collecting pip-api>=0.0.28 (from pip-audit)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:01.9787415Z   Downloading pip_api-0.0.35-py3-none-any.whl.metadata (17 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:01.9972641Z Collecting pip-requirements-parser>=32.0.0 (from pip-audit)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.0050025Z   Downloading pip_requirements_parser-32.0.1-py3-none-any.whl.metadata (9.3 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.0352721Z Collecting requests>=2.31.0 (from pip-audit)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.0434316Z   Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.0849804Z Collecting rich>=12.4 (from pip-audit)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.0931665Z   Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.1324592Z Collecting tomli>=2.2.1 (from pip-audit)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.1408839Z   Downloading tomli-2.5.0-py3-none-any.whl.metadata (10 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.1556021Z Collecting tomli-w>=1.2.0 (from pip-audit)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.1636809Z   Downloading tomli_w-1.2.0-py3-none-any.whl.metadata (5.7 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.1919458Z Collecting platformdirs>=4.2.0 (from pip-audit)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.2012678Z   Downloading platformdirs-4.12.4-py3-none-any.whl.metadata (5.5 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.2229019Z Collecting license-expression<31,>=30 (from cyclonedx-python-lib<12,>=5->pip-audit)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.2313158Z   Downloading license_expression-30.4.4-py3-none-any.whl.metadata (11 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.2549732Z Collecting packageurl-python<2,>=0.11 (from cyclonedx-python-lib<12,>=5->pip-audit)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.2630618Z   Downloading packageurl_python-0.17.6-py3-none-any.whl.metadata (5.1 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.2839060Z Collecting py-serializable<3.0.0,>=2.1.0 (from cyclonedx-python-lib<12,>=5->pip-audit)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.2918086Z   Downloading py_serializable-2.1.0-py3-none-any.whl.metadata (4.3 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.3088781Z Collecting sortedcontainers<3.0.0,>=2.4.0 (from cyclonedx-python-lib<12,>=5->pip-audit)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.3169687Z   Downloading sortedcontainers-2.4.0-py2.py3-none-any.whl.metadata (10 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.3406790Z Collecting typing_extensions<5.0,>=4.6 (from cyclonedx-python-lib<12,>=5->pip-audit)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.3490520Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.3672176Z Collecting boolean.py>=4.0 (from license-expression<31,>=30->cyclonedx-python-lib<12,>=5->pip-audit)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.3752748Z   Downloading boolean_py-5.0-py3-none-any.whl.metadata (2.3 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.3932032Z Collecting defusedxml<0.8.0,>=0.7.1 (from py-serializable<3.0.0,>=2.1.0->cyclonedx-python-lib<12,>=5->pip-audit)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.4006940Z   Downloading defusedxml-0.7.1-py2.py3-none-any.whl.metadata (32 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.5177832Z Collecting msgpack<2.0.0,>=0.5.2 (from CacheControl>=0.13.0->CacheControl[filecache]>=0.13.0->pip-audit)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.5259683Z   Downloading msgpack-1.2.4-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.3 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.5623026Z Collecting filelock>=3.8.0 (from CacheControl[filecache]>=0.13.0->pip-audit)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.5702162Z   Downloading filelock-4.1.0-py3-none-any.whl.metadata (2.0 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.5745830Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages (from pip-api>=0.0.28->pip-audit) (26.2.2)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.6035328Z Collecting pyparsing (from pip-requirements-parser>=32.0.0->pip-audit)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.6118410Z   Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.7693599Z Collecting charset_normalizer<4,>=2 (from requests>=2.31.0->pip-audit)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.7795241Z   Downloading charset_normalizer-3.5.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.8029801Z Collecting idna<4,>=2.5 (from requests>=2.31.0->pip-audit)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.8112298Z   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.8433000Z Collecting urllib3<3,>=1.26 (from requests>=2.31.0->pip-audit)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.8513508Z   Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.8761025Z Collecting certifi>=2023.5.7 (from requests>=2.31.0->pip-audit)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.8838915Z   Downloading certifi-2026.10.23-py3-none-any.whl.metadata (2.5 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.9076889Z Collecting markdown-it-py>=2.2.0 (from rich>=12.4->pip-audit)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.9153212Z   Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.9419234Z Collecting pygments<3.0.0,>=2.13.0 (from rich>=12.4->pip-audit)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.9498297Z   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.9661180Z Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=12.4->pip-audit)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.9738354Z   Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:02.9882269Z Downloading pip_audit-2.10.1-py3-none-any.whl (62 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:03.0038253Z Downloading cyclonedx_python_lib-11.12.0-py3-none-any.whl (529 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:03.0510421Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 529.5/529.5 kB 12.6 MB/s  0:00:00
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:03.0588865Z Downloading license_expression-30.4.4-py3-none-any.whl (120 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:03.0762803Z Downloading packageurl_python-0.17.6-py3-none-any.whl (36 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:03.0870077Z Downloading py_serializable-2.1.0-py3-none-any.whl (23 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:03.0970072Z Downloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:03.1070664Z Downloading sortedcontainers-2.4.0-py2.py3-none-any.whl (29 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:03.1170402Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:03.1273434Z Downloading boolean_py-5.0-py3-none-any.whl (26 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:03.1369578Z Downloading cachecontrol-0.14.4-py3-none-any.whl (22 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:03.1465601Z Downloading msgpack-1.2.4-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (461 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:03.1820406Z Downloading filelock-4.1.0-py3-none-any.whl (133 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:03.1970017Z Downloading packaging-26.3-py3-none-any.whl (129 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:03.2120922Z Downloading pip_api-0.0.35-py3-none-any.whl (123 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:03.2252564Z Downloading pip_requirements_parser-32.0.1-py3-none-any.whl (35 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:03.2353538Z Downloading platformdirs-4.12.4-py3-none-any.whl (32 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:03.2451164Z Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:03.2560153Z Downloading charset_normalizer-3.5.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (271 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:03.2765469Z Downloading idna-3.20-py3-none-any.whl (69 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:03.2873941Z Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:03.3011572Z Downloading certifi-2026.10.23-py3-none-any.whl (135 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:03.3146342Z Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:03.3360395Z Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:03.3955242Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 30.4 MB/s  0:00:00
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:03.4034467Z Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:03.4136961Z Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:03.4233044Z Downloading tomli-2.5.0-py3-none-any.whl (14 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:03.4329255Z Downloading tomli_w-1.2.0-py3-none-any.whl (6.7 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:03.4427764Z Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:03.5825622Z Installing collected packages: sortedcontainers, boolean.py, urllib3, typing_extensions, tomli-w, tomli, pyparsing, pygments, platformdirs, pip-api, packaging, packageurl-python, msgpack, mdurl, license-expression, idna, filelock, defusedxml, charset_normalizer, certifi, requests, py-serializable, pip-requirements-parser, markdown-it-py, rich, cyclonedx-python-lib, CacheControl, pip-audit
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:05.4492323Z 
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:05.4540007Z Successfully installed CacheControl-0.14.4 boolean.py-5.0 certifi-2026.10.23 charset_normalizer-3.5.2 cyclonedx-python-lib-11.12.0 defusedxml-0.7.1 filelock-4.1.0 idna-3.20 license-expression-30.4.4 markdown-it-py-4.2.0 mdurl-0.1.2 msgpack-1.2.4 packageurl-python-0.17.6 packaging-26.3 pip-api-0.0.35 pip-audit-2.10.1 pip-requirements-parser-32.0.1 platformdirs-4.12.4 py-serializable-2.1.0 pygments-2.21.0 pyparsing-3.3.3 requests-2.34.2 rich-15.0.0 sortedcontainers-2.4.0 tomli-2.5.0 tomli-w-1.2.0 typing_extensions-4.16.0 urllib3-2.8.0
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:05.9377811Z Collecting flask (from -r requirements.txt (line 1))
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:05.9957008Z   Downloading flask-3.1.3-py3-none-any.whl.metadata (3.2 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:06.0128962Z Collecting blinker>=1.9.0 (from flask->-r requirements.txt (line 1))
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:06.0203335Z   Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:06.0444776Z Collecting click>=8.1.3 (from flask->-r requirements.txt (line 1))
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:06.0520533Z   Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:06.0677323Z Collecting itsdangerous>=2.2.0 (from flask->-r requirements.txt (line 1))
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:06.0750626Z   Downloading itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:06.0937494Z Collecting jinja2>=3.1.2 (from flask->-r requirements.txt (line 1))
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:06.1012580Z   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:06.1918527Z Collecting markupsafe>=2.1.1 (from flask->-r requirements.txt (line 1))
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:06.1997435Z   Downloading markupsafe-3.0.4-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:06.2245898Z Collecting werkzeug>=3.1.0 (from flask->-r requirements.txt (line 1))
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:06.2322649Z   Downloading werkzeug-3.1.9-py3-none-any.whl.metadata (4.1 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:06.2473282Z Downloading flask-3.1.3-py3-none-any.whl (103 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:06.2685874Z Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:06.2784536Z Downloading click-8.5.0-py3-none-any.whl (125 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:06.2941836Z Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:06.3035114Z Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:06.3196156Z Downloading markupsafe-3.0.4-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (20 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:06.3307388Z Downloading werkzeug-3.1.9-py3-none-any.whl (228 kB)
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:06.4097729Z Installing collected packages: markupsafe, itsdangerous, click, blinker, werkzeug, jinja2, flask
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:06.7621174Z 
+Python Dependency Security Audit	Install pip-audit	2026-10-27T07:03:06.7670908Z Successfully installed blinker-1.9.0 click-8.5.0 flask-3.1.3 itsdangerous-2.2.0 jinja2-3.1.6 markupsafe-3.0.4 werkzeug-3.1.9
+Python Dependency Security Audit	Run Pip Audit	﻿2026-10-27T07:03:06.8304357Z ##[group]Run pip-audit --requirement requirements.txt
+Python Dependency Security Audit	Run Pip Audit	2026-10-27T07:03:06.8305112Z ^[[36;1mpip-audit --requirement requirements.txt^[[0m
+Python Dependency Security Audit	Run Pip Audit	2026-10-27T07:03:06.8372377Z shell: /usr/bin/bash -e {0}
+Python Dependency Security Audit	Run Pip Audit	2026-10-27T07:03:06.8372644Z env:
+Python Dependency Security Audit	Run Pip Audit	2026-10-27T07:03:06.8372917Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.22/x64
+Python Dependency Security Audit	Run Pip Audit	2026-10-27T07:03:06.8373366Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.22/x64/lib/pkgconfig
+Python Dependency Security Audit	Run Pip Audit	2026-10-27T07:03:06.8373830Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+Python Dependency Security Audit	Run Pip Audit	2026-10-27T07:03:06.8374244Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+Python Dependency Security Audit	Run Pip Audit	2026-10-27T07:03:06.8374649Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+Python Dependency Security Audit	Run Pip Audit	2026-10-27T07:03:06.8375554Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.22/x64/lib
+Python Dependency Security Audit	Run Pip Audit	2026-10-27T07:03:06.8375903Z ##[endgroup]
+Python Dependency Security Audit	Run Pip Audit	2026-10-27T07:03:15.4871925Z No known vulnerabilities found
+Python Dependency Security Audit	Post Setup Python	﻿2026-10-27T07:03:15.5507676Z Post job cleanup.
+Python Dependency Security Audit	Post Setup Python	2026-10-27T07:03:15.6759293Z (node:2464) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Python Dependency Security Audit	Post Setup Python	2026-10-27T07:03:15.6760829Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Python Dependency Security Audit	Post Checkout Source Code	﻿2026-10-27T07:03:15.6980378Z Post job cleanup.
+Python Dependency Security Audit	Post Checkout Source Code	2026-10-27T07:03:15.7923957Z [command]/usr/bin/git version
+Python Dependency Security Audit	Post Checkout Source Code	2026-10-27T07:03:15.7968246Z git version 2.55.0
+Python Dependency Security Audit	Post Checkout Source Code	2026-10-27T07:03:15.8010031Z Temporarily overriding HOME='/home/runner/work/_temp/0e5cca2e-ead6-49dd-834b-ffd3afdc58f8' before making global git config changes
+Python Dependency Security Audit	Post Checkout Source Code	2026-10-27T07:03:15.8011455Z Adding repository directory to the temporary git global config as a safe directory
+Python Dependency Security Audit	Post Checkout Source Code	2026-10-27T07:03:15.8017716Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/DevSecOps-pipeling/DevSecOps-pipeling
+Python Dependency Security Audit	Post Checkout Source Code	2026-10-27T07:03:15.8060490Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Python Dependency Security Audit	Post Checkout Source Code	2026-10-27T07:03:15.8112501Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Python Dependency Security Audit	Post Checkout Source Code	2026-10-27T07:03:15.8367785Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Python Dependency Security Audit	Post Checkout Source Code	2026-10-27T07:03:15.8402904Z http.https://github.com/.extraheader
+Python Dependency Security Audit	Post Checkout Source Code	2026-10-27T07:03:15.8419192Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Python Dependency Security Audit	Post Checkout Source Code	2026-10-27T07:03:15.8477119Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Python Dependency Security Audit	Post Checkout Source Code	2026-10-27T07:03:15.8782125Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Python Dependency Security Audit	Post Checkout Source Code	2026-10-27T07:03:15.8824044Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Python Dependency Security Audit	Complete job	﻿2026-10-27T07:03:15.9203262Z Cleaning up orphan processes
+Python Dependency Security Audit	Complete job	2026-10-27T07:03:15.9500734Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Build, Deploy & Health Check on VM	Set up job	﻿2026-10-27T07:03:31.6646291Z Current runner version: '2.338.0'
+Build, Deploy & Health Check on VM	Set up job	2026-10-27T07:03:31.6667698Z Runner name: 'kenn'
+Build, Deploy & Health Check on VM	Set up job	2026-10-27T07:03:31.6675371Z Runner group name: 'Default'
+Build, Deploy & Health Check on VM	Set up job	2026-10-27T07:03:31.6677327Z Machine name: 'kenn'
+Build, Deploy & Health Check on VM	Set up job	2026-10-27T07:03:31.6683858Z ##[group]GITHUB_TOKEN Permissions
+Build, Deploy & Health Check on VM	Set up job	2026-10-27T07:03:31.6691819Z Contents: read
+Build, Deploy & Health Check on VM	Set up job	2026-10-27T07:03:31.6694441Z Metadata: read
+Build, Deploy & Health Check on VM	Set up job	2026-10-27T07:03:31.6695890Z Packages: read
+Build, Deploy & Health Check on VM	Set up job	2026-10-27T07:03:31.6696937Z ##[endgroup]
+Build, Deploy & Health Check on VM	Set up job	2026-10-27T07:03:31.6703076Z Secret source: Actions
+Build, Deploy & Health Check on VM	Set up job	2026-10-27T07:03:31.6706830Z Cache mode: write
+Build, Deploy & Health Check on VM	Set up job	2026-10-27T07:03:31.6708138Z Prepare workflow directory
+Build, Deploy & Health Check on VM	Set up job	2026-10-27T07:03:31.7469883Z Prepare all required actions
+Build, Deploy & Health Check on VM	Set up job	2026-10-27T07:03:31.7567201Z Getting action download info
+Build, Deploy & Health Check on VM	Set up job	2026-10-27T07:03:33.1918597Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+Build, Deploy & Health Check on VM	Set up job	2026-10-27T07:03:34.4764704Z Complete job name: Build, Deploy & Health Check on VM
+Build, Deploy & Health Check on VM	Checkout Source Code	﻿2026-10-27T07:03:34.6058375Z ##[group]Run actions/checkout@v4
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.6059635Z with:
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.6060089Z   repository: Kenn6-sIlennt/DevSecOps-pipeling
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.6063355Z   token: ***
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.6063768Z   ssh-strict: true
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.6064139Z   ssh-user: git
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.6064520Z   persist-credentials: true
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.6064934Z   clean: true
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.6065677Z   sparse-checkout-cone-mode: true
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.6066207Z   fetch-depth: 1
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.6066524Z   fetch-tags: false
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.6066805Z   show-progress: true
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.6067092Z   lfs: false
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.6067376Z   submodules: false
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.6067685Z   set-safe-directory: true
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.6068043Z   allow-unsafe-pr-checkout: false
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.6068762Z ##[endgroup]
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.9056280Z Syncing repository: Kenn6-sIlennt/DevSecOps-pipeling
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.9063360Z ##[group]Getting Git version info
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.9065649Z Working directory is '/home/kenn/actions-runner/_work/DevSecOps-pipeling/DevSecOps-pipeling'
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.9068008Z [command]/usr/bin/git version
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.9071259Z git version 2.43.0
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.9075130Z ##[endgroup]
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.9081765Z Temporarily overriding HOME='/home/kenn/actions-runner/_work/_temp/c0f23f26-6d69-47b9-84f2-8c48adc1e5f3' before making global git config changes
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.9085441Z Adding repository directory to the temporary git global config as a safe directory
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.9086558Z [command]/usr/bin/git config --global --add safe.directory /home/kenn/actions-runner/_work/DevSecOps-pipeling/DevSecOps-pipeling
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.9090335Z [command]/usr/bin/git config --local --get remote.origin.url
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.9093515Z https://github.com/Kenn6-sIlennt/DevSecOps-pipeling
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.9095608Z ##[group]Removing previously created refs, to avoid conflicts
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.9096355Z [command]/usr/bin/git rev-parse --symbolic-full-name --verify --quiet HEAD
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.9097013Z refs/heads/main
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.9098194Z [command]/usr/bin/git checkout --detach
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.9098756Z HEAD is now at 89cf68c Delete .github/workflows/devsecops.yml
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.9103221Z [command]/usr/bin/git branch --delete --force main
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.9103910Z Deleted branch main (was 89cf68c).
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.9105316Z ##[endgroup]
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.9108173Z [command]/usr/bin/git submodule status
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.9337337Z ##[group]Cleaning the repository
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.9339478Z [command]/usr/bin/git clean -ffdx
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.9391580Z [command]/usr/bin/git reset --hard HEAD
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.9453543Z HEAD is now at 89cf68c Delete .github/workflows/devsecops.yml
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.9466175Z ##[endgroup]
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.9467434Z ##[group]Disabling automatic garbage collection
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.9469041Z [command]/usr/bin/git config --local gc.auto 0
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.9524378Z ##[endgroup]
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.9525256Z ##[group]Setting up auth
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.9526919Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.9582571Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:34.9976711Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:35.0017946Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:35.0402819Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:35.0469977Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:35.0842645Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:35.0912720Z ##[endgroup]
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:35.0924565Z ##[group]Fetching the repository
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:35.0932871Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +90f3eed4cb5e7e4bb4871cc25242484fb314af2f:refs/remotes/pull/7/merge
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:36.0568299Z From https://github.com/Kenn6-sIlennt/DevSecOps-pipeling
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:36.0578392Z  * [new ref]         90f3eed4cb5e7e4bb4871cc25242484fb314af2f -> pull/7/merge
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:36.0664816Z ##[endgroup]
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:36.0665830Z ##[group]Determining the checkout info
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:36.0666623Z ##[endgroup]
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:36.0675185Z [command]/usr/bin/git sparse-checkout disable
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:36.0766566Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:36.0812918Z ##[group]Checking out the ref
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:36.0814200Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/7/merge
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:36.0869008Z Previous HEAD position was 89cf68c Delete .github/workflows/devsecops.yml
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:36.0873033Z HEAD is now at 90f3eed Merge b03056598aa923dab0a5fb2eecabaa32db077d6a into 89cf68c342d2c70f127450dd02109b5e2b024cf2
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:36.0893196Z ##[endgroup]
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:36.0971826Z [command]/usr/bin/git log -1 --format=%H
+Build, Deploy & Health Check on VM	Checkout Source Code	2026-10-27T07:03:36.1002897Z 90f3eed4cb5e7e4bb4871cc25242484fb314af2f
+Build, Deploy & Health Check on VM	Build and Run Container	﻿2026-10-27T07:03:36.1334242Z ##[group]Run echo "Building Docker container using IMP-Dockerfile..."
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:36.1335494Z ^[[36;1mecho "Building Docker container using IMP-Dockerfile..."^[[0m
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:36.1336253Z ^[[36;1mdocker build -t secure-flask-app:latest -f IMP-Dockerfile .^[[0m
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:36.1336891Z ^[[36;1m^[[0m
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:36.1337385Z ^[[36;1mecho "Force removing existing container if present..."^[[0m
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:36.1337979Z ^[[36;1mdocker rm -f web-flask || true^[[0m
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:36.1338445Z ^[[36;1m^[[0m
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:36.1338921Z ^[[36;1mecho "Running new container with restart policy..."^[[0m
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:36.1339808Z ^[[36;1mdocker run -d -p 5000:5000 --name web-flask --restart unless-stopped secure-flask-app:latest^[[0m
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:36.1372736Z shell: /usr/bin/bash -e {0}
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:36.1373482Z ##[endgroup]
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:36.1498899Z Building Docker container using IMP-Dockerfile...
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:36.6333409Z #0 building with "default" instance using docker driver
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:36.6342769Z 
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:36.6354136Z #1 [internal] load build definition from IMP-Dockerfile
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:36.6373632Z #1 transferring dockerfile: 522B done
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:36.6374940Z #1 DONE 0.0s
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:36.6376129Z 
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:36.6377087Z #2 [internal] load metadata for docker.io/library/python:3.10-slim
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:39.3955756Z #2 DONE 2.9s
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:39.5281748Z 
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:39.5343771Z #3 [internal] load .dockerignore
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:39.5344900Z #3 transferring context: 2B done
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:39.5345338Z #3 DONE 0.0s
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:39.5346414Z 
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:39.5347114Z #4 [1/7] FROM docker.io/library/python:3.10-slim@sha256:6ff506466f8b1e981719b468cc0023b8ef000b983cdec0eafe119d01f379e31d
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:39.5348506Z #4 resolve docker.io/library/python:3.10-slim@sha256:6ff506466f8b1e981719b468cc0023b8ef000b983cdec0eafe119d01f379e31d 0.0s done
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:39.5349699Z #4 DONE 0.0s
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:39.5349999Z 
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:39.5350234Z #5 [internal] load build context
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:39.5351225Z #5 transferring context: 17.73kB 0.0s done
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:39.5351829Z #5 DONE 0.0s
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:39.5352456Z 
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:39.5352749Z #6 [2/7] WORKDIR /app
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:39.5353251Z #6 CACHED
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:39.5353445Z 
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:39.5353666Z #7 [3/7] RUN useradd -m appuser
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:39.5354095Z #7 CACHED
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:39.5354285Z 
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:39.5354544Z #8 [4/7] COPY requirements.txt .
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:39.5355098Z #8 CACHED
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:39.5355357Z 
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:39.5355681Z #9 [5/7] RUN pip install --no-cache-dir -r requirements.txt
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:39.5404480Z #9 CACHED
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:39.5404798Z 
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:39.5416406Z #10 [6/7] COPY . .
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:39.5417516Z #10 DONE 0.0s
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:39.6561673Z 
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:39.6562884Z #11 [7/7] RUN chown -R appuser:appuser /app
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:40.0595490Z #11 DONE 0.6s
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:40.1887260Z 
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:40.1887734Z #12 exporting to image
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:40.1888119Z #12 exporting layers 0.1s done
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:40.2903839Z #12 exporting manifest sha256:214c01eb7029956a0e1c29e41e40cb4f4f205ebe035738422996dd4dd452453d done
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:40.2908921Z #12 exporting config sha256:022dbd99f0a7d9b1dcdcd716f2f431507e43ef9cf8c79c853240d662f6754786 done
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:40.2910775Z #12 exporting attestation manifest sha256:f8dc60b232afae714c1af42c359a72b2eae801dca837a2deb83129ad706622fe done
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:40.2913950Z #12 exporting manifest list sha256:0e18081ff5ada2854472ef75a19bb99b35fa5d0891e9d6f1b007fc9f2bcf7e37 done
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:40.2917127Z #12 naming to docker.io/library/secure-flask-app:latest done
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:40.2920155Z #12 unpacking to docker.io/library/secure-flask-app:latest 0.1s done
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:40.3909727Z #12 DONE 0.3s
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:40.3981142Z Force removing existing container if present...
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:40.6427526Z web-flask
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:40.6433228Z Running new container with restart policy...
+Build, Deploy & Health Check on VM	Build and Run Container	2026-10-27T07:03:40.7158704Z 64183704975de81bdb3d63415a7b75401697c80ef3fb471ed8d0317f7f83044b
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	﻿2026-10-27T07:03:41.0110407Z ##[group]Run echo "Checking container running state..."
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0131493Z ^[[36;1mecho "Checking container running state..."^[[0m
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0131985Z ^[[36;1mRUNNING=$(docker inspect --format='{{.State.Running}}' web-flask)^[[0m
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0132378Z ^[[36;1mif [ "$RUNNING" != "true" ]; then^[[0m
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0132734Z ^[[36;1m    echo "ERROR: Container is not running (broken/unhealthy)."^[[0m
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0133071Z ^[[36;1m    exit 1^[[0m
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0133311Z ^[[36;1mfi^[[0m
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0133506Z ^[[36;1m^[[0m
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0133774Z ^[[36;1mecho "Checking container exit code & restart count..."^[[0m
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0134223Z ^[[36;1mEXIT_CODE=$(docker inspect --format='{{.State.ExitCode}}' web-flask)^[[0m
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0134756Z ^[[36;1mRESTART_COUNT=$(docker inspect --format='{{.RestartCount}}' web-flask)^[[0m
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0135218Z ^[[36;1mecho "Exit Code: $EXIT_CODE, Restart Count: $RESTART_COUNT"^[[0m
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0135566Z ^[[36;1mif [ "$EXIT_CODE" != "0" ]; then^[[0m
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0135981Z ^[[36;1m    echo "ERROR: Container exited with error code $EXIT_CODE."^[[0m
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0136321Z ^[[36;1m    exit 1^[[0m
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0136535Z ^[[36;1mfi^[[0m
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0136730Z ^[[36;1m^[[0m
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0137021Z ^[[36;1mecho "Checking container resource statistics & optimization..."^[[0m
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0137399Z ^[[36;1mdocker stats web-flask --no-stream^[[0m
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0138105Z ^[[36;1m^[[0m
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0138676Z ^[[36;1mecho "Checking HTTP application endpoint health..."^[[0m
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0139062Z ^[[36;1mfor i in {1..5}; do^[[0m
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0139453Z ^[[36;1m    if curl -sSf http://localhost:5000/; then^[[0m
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0139848Z ^[[36;1m        echo "Application is healthy and responding!"^[[0m
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0140165Z ^[[36;1m        exit 0^[[0m
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0140383Z ^[[36;1m    fi^[[0m
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0140848Z ^[[36;1m    echo "Waiting for application to start (attempt $i/5)..."^[[0m
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0141254Z ^[[36;1m    sleep 2^[[0m
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0141476Z ^[[36;1mdone^[[0m
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0141815Z ^[[36;1mecho "ERROR: Application health check failed after 5 attempts."^[[0m
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0142158Z ^[[36;1mexit 1^[[0m
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0163512Z shell: /usr/bin/bash -e {0}
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0163810Z ##[endgroup]
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0606495Z Checking container running state...
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.0870537Z Checking container exit code & restart count...
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.1802522Z Exit Code: 0, Restart Count: 0
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:41.1803427Z Checking container resource statistics & optimization...
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:42.2135423Z CONTAINER ID   NAME        CPU %     MEM USAGE / LIMIT    MEM %     NET I/O      BLOCK I/O   PIDS
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:42.2137909Z 64183704975d   web-flask   10.75%    20.2MiB / 3.777GiB   0.52%     736B / 84B   0B / 41kB   1
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:42.2178063Z Checking HTTP application endpoint health...
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:42.2401818Z curl: (22) The requested URL returned error: 500
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:42.2411491Z Waiting for application to start (attempt 1/5)...
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:44.2657073Z curl: (22) The requested URL returned error: 500
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:44.2677333Z Waiting for application to start (attempt 2/5)...
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:46.2924911Z curl: (22) The requested URL returned error: 500
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:46.2952507Z Waiting for application to start (attempt 3/5)...
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:48.3132451Z curl: (22) The requested URL returned error: 500
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:48.3176372Z Waiting for application to start (attempt 4/5)...
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:50.3378284Z curl: (22) The requested URL returned error: 500
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:50.3395063Z Waiting for application to start (attempt 5/5)...
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:52.3437195Z ERROR: Application health check failed after 5 attempts.
+Build, Deploy & Health Check on VM	Container Health & Optimization Check	2026-10-27T07:03:52.3478796Z ##[error]Process completed with exit code 1.
+Build, Deploy & Health Check on VM	Post Checkout Source Code	﻿2026-10-27T07:03:52.3784560Z Post job cleanup.
+Build, Deploy & Health Check on VM	Post Checkout Source Code	2026-10-27T07:03:52.5134661Z [command]/usr/bin/git version
+Build, Deploy & Health Check on VM	Post Checkout Source Code	2026-10-27T07:03:52.5219921Z git version 2.43.0
+Build, Deploy & Health Check on VM	Post Checkout Source Code	2026-10-27T07:03:52.5324064Z Temporarily overriding HOME='/home/kenn/actions-runner/_work/_temp/5696f202-b0f8-4931-a5a4-db6badc3b764' before making global git config changes
+Build, Deploy & Health Check on VM	Post Checkout Source Code	2026-10-27T07:03:52.5338536Z Adding repository directory to the temporary git global config as a safe directory
+Build, Deploy & Health Check on VM	Post Checkout Source Code	2026-10-27T07:03:52.5342739Z [command]/usr/bin/git config --global --add safe.directory /home/kenn/actions-runner/_work/DevSecOps-pipeling/DevSecOps-pipeling
+Build, Deploy & Health Check on VM	Post Checkout Source Code	2026-10-27T07:03:52.5446360Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Build, Deploy & Health Check on VM	Post Checkout Source Code	2026-10-27T07:03:52.5518715Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Build, Deploy & Health Check on VM	Post Checkout Source Code	2026-10-27T07:03:52.6060246Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Build, Deploy & Health Check on VM	Post Checkout Source Code	2026-10-27T07:03:52.6120566Z http.https://github.com/.extraheader
+Build, Deploy & Health Check on VM	Post Checkout Source Code	2026-10-27T07:03:52.6140595Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Build, Deploy & Health Check on VM	Post Checkout Source Code	2026-10-27T07:03:52.6206780Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Build, Deploy & Health Check on VM	Post Checkout Source Code	2026-10-27T07:03:52.6570320Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Build, Deploy & Health Check on VM	Post Checkout Source Code	2026-10-27T07:03:52.6607067Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Build, Deploy & Health Check on VM	Complete job	﻿2026-10-27T07:03:52.7084524Z Cleaning up orphan processes
+Build, Deploy & Health Check on VM	Complete job	2026-10-27T07:03:52.7717038Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
