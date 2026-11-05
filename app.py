@@ -31,12 +31,9 @@ def index():
         conn = sqlite3.connect("users.db")
         cursor = conn.cursor()
 
-        # Rentan: input pengguna disisipkan langsung ke teks query
-        query = (
-            f"SELECT * FROM users WHERE username = '{username}' "
-            f"AND password = '{password}'"
-        )
-        cursor.execute(query)
+        # Parameterized query untuk mencegah SQL Injection
+        query = "SELECT * FROM users WHERE username = ? AND password = ?"
+        cursor.execute(query, (username, password))
         user = cursor.fetchone()
         conn.close()
 
